@@ -13,7 +13,10 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-
+\src\main\resources\application.properties
+\.mvn
+\.idea
+\.settings
 # Windows shortcuts
 *.lnk
 

@@ -24,14 +24,6 @@ public class SecurityexampleApplication implements CommandLineRunner {
 	}
 	@Override
 	public void run(String... args) throws Exception{
-		User user = new User();
-		user.setUsername("zach");
-		user.setPassword("password");
-		Set<UserRole> userRoles = new HashSet<>();
-		Role role = new Role();
-		role.setName("ADMIN");
-		userRoles.add(new UserRole(user,role));
-		userService.createUser(user,userRoles);
 
 	}
 }

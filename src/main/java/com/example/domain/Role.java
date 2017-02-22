@@ -11,6 +11,7 @@ import java.util.Set;
 public class Role { //defines role entity
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
 

@@ -13,7 +13,7 @@ import javax.persistence.OneToMany;
  * Created by zach on 2/7/2017.
  */
 @Entity
-public class User implements UserDetails{ //defines the user entity, and how to return it.
+public class User implements UserDetails{ //defines the user entity, and how to return it
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 

@@ -1,58 +1,91 @@
 package com.example.domain;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
- * Created by ZACH on 2/23/2017.
+ * Created by zach on 2/24/2017.
  */
-public class Section {
+@Entity
+
+public class Section implements java.io.Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private DateTimeFormat sectionTime;
-    private String sectionRoom;
-    private String teacher;
-    //need mapping between section and class
-    public Section(DateTimeFormat sectionTime, String sectionRoom, String teacher) {
-        this.sectionTime = sectionTime;
-        this.sectionRoom = sectionRoom;
-        this.teacher = teacher;
+    @Column(name="section_id")
+    private int id;
+    private String sectionName;
+    private int sectionTime;
+    private String teacherFirst;
+    private String teacherLast;
+
+
+    public Section()
+    {
+
+    }
+    @OneToMany(mappedBy = "section", cascade = CascadeType.ALL)
+    private Set<User> users = new HashSet<>();
+
+    public Set<User> getUsers() {
+        return users;
     }
 
-    public Long getId() {
+    public void setUsers(Set<User> users) {
+        this.users = users;
+    }
+
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName = "inclass_id")
+    private inClass className;
+
+    public inClass getClassName() {
+        return className;
+    }
+
+    public void setClassName(inClass className) {
+        this.className = className;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public DateTimeFormat getSectionTime() {
+    public String getSectionName() {
+        return sectionName;
+    }
+
+    public void setSectionName(String sectionName) {
+        this.sectionName = sectionName;
+    }
+
+    public int getSectionTime() {
         return sectionTime;
     }
 
-    public void setSectionTime(DateTimeFormat sectionTime) {
+    public void setSectionTime(int sectionTime) {
         this.sectionTime = sectionTime;
     }
 
-    public String getSectionRoom() {
-        return sectionRoom;
+    public String getTeacherFirst() {
+        return teacherFirst;
     }
 
-    public void setSectionRoom(String sectionRoom) {
-        this.sectionRoom = sectionRoom;
+    public void setTeacherFirst(String teacherFirst) {
+        this.teacherFirst = teacherFirst;
     }
 
-    public String getTeacher() {
-        return teacher;
+    public String getTeacherLast() {
+        return teacherLast;
     }
 
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
+    public void setTeacherLast(String teacherLast) {
+        this.teacherLast = teacherLast;
     }
 
 

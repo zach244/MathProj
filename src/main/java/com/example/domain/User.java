@@ -16,7 +16,6 @@ import javax.persistence.OneToMany;
 public class User implements UserDetails{ //defines the user entity, and how to return it.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
 
     @Column(unique = true)
@@ -27,6 +26,17 @@ public class User implements UserDetails{ //defines the user entity, and how to 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();
 
+    public User(String username, String password, Section section, Set<UserRole> userRoles) {
+        this.username = username;
+        this.password = password;
+        this.section = section;
+        this.userRoles = userRoles;
+    }
+
+
+    @ManyToOne
+    @JoinColumn(referencedColumnName ="section_id")
+    private Section section;
     public User(){}
 
     public Long getId() {
@@ -86,5 +96,13 @@ public class User implements UserDetails{ //defines the user entity, and how to 
 
     public void setUserRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
+    }
+
+    public Section getSection() {
+        return section;
+    }
+
+    public void setSection(Section section) {
+        this.section = section;
     }
 }

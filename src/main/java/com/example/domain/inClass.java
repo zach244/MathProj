@@ -24,6 +24,9 @@ public class inClass implements java.io.Serializable{
     @OneToMany(mappedBy="className", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private Set<Section> classSections = new HashSet<>();
 
+    @OneToMany(mappedBy="inClass", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    private Set<Lesson> lessons = new HashSet<>();
+
     public Set<Section> getClassSections() {
         return classSections;
     }
@@ -32,11 +35,19 @@ public class inClass implements java.io.Serializable{
         this.classSections = classSections;
     }
 
-    public inClass(String className, int gradeLevel, Set<Section> classSections) {
-
+    public inClass(String className, int gradeLevel, Set<Section> classSections, Set<Lesson> lessons) {
         this.className = className;
         this.gradeLevel = gradeLevel;
         this.classSections = classSections;
+        this.lessons = lessons;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
     }
 
     public int getId() {

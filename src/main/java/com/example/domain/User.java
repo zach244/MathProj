@@ -26,17 +26,23 @@ public class User implements UserDetails{ //defines the user entity, and how to 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();
 
-    public User(String username, String password, Section section, Set<UserRole> userRoles) {
+    public User(String username, String password, Set<UserRole> userRoles) {
         this.username = username;
         this.password = password;
-        this.section = section;
         this.userRoles = userRoles;
     }
 
+    @OneToMany(mappedBy = "testAttempt", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<TestAttempt> testAttempts = new HashSet<>();
 
-    @ManyToOne
-    @JoinColumn(referencedColumnName ="section_id")
-    private Section section;
+
+    public User(String username, String password, Set<UserRole> userRoles, Set<TestAttempt> testAttempts) {
+        this.username = username;
+        this.password = password;
+        this.userRoles = userRoles;
+        this.testAttempts = testAttempts;
+    }
+
     public User(){}
 
     public Long getId() {
@@ -98,11 +104,11 @@ public class User implements UserDetails{ //defines the user entity, and how to 
         this.userRoles = userRoles;
     }
 
-    public Section getSection() {
-        return section;
+    public Set<TestAttempt> getTestAttempts() {
+        return testAttempts;
     }
 
-    public void setSection(Section section) {
-        this.section = section;
+    public void setTestAttempts(Set<TestAttempt> testAttempts) {
+        this.testAttempts = testAttempts;
     }
 }

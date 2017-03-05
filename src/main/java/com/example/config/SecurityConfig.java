@@ -21,20 +21,7 @@ import java.security.SecureRandom;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    @Autowired
-    private Environment env;
-
-    @Autowired
-    private UserSecurityService userSecurityService;
-
-    private static final String SALT ="slklddkdkdlsl12323ll2l2dldl";
-
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder()
-    {
-        return new BCryptPasswordEncoder(12,new SecureRandom(SALT.getBytes()));
-    }
-
+    private static final String SALT = "slklddkdkdlsl12323ll2l2dldl";
     private static final String[] PUBLIC_MATCHERS = {
             "/webjars/**",
             "/css/**",
@@ -48,8 +35,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     };
+    @Autowired
+    private Environment env;
+    @Autowired
+    private UserSecurityService userSecurityService;
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder(12, new SecureRandom(SALT.getBytes()));
+    }
+
     @Override
-    protected void configure(HttpSecurity http) throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
        /* List<String> activeProfiles = Arrays.asList(env.getActiveProfiles()); //returns all active profiles in enviroment
         if(activeProfiles.contains("dev"))//if dev label, disable these restrictions
         {
@@ -66,8 +63,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout().permitAll();
     }
+
     @Autowired
-    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
+    public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userSecurityService).passwordEncoder(passwordEncoder()); //checks user
     }
 }

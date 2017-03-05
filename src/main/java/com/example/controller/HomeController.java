@@ -3,12 +3,13 @@ package com.example.controller;
 import com.example.domain.Role;
 import com.example.domain.User;
 import com.example.domain.UserRole;
+import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
-import com.example.service.UserService;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -23,19 +24,17 @@ public class HomeController {
     private UserService userService;
 
     @RequestMapping("/login")
-    public String login()
-    {
+    public String login() {
         return "login";
     }
+
     @RequestMapping("/payload")
-    public String payload()
-    {
+    public String payload() {
         return "payload";
     }
 
     @RequestMapping("/registration")
-    public String registration()
-    {
+    public String registration() {
         return "registration";
     }
 
@@ -55,8 +54,8 @@ public class HomeController {
         Set<UserRole> userRoles = new HashSet<>();
         Role role = new Role();
         role.setName("ADMIN");
-        userRoles.add(new UserRole(userForm,role));
-        userService.createUser(userForm,userRoles);
+        userRoles.add(new UserRole(userForm, role));
+        userService.createUser(userForm, userRoles);
 
         return "redirect:/payload";
     }

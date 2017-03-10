@@ -19,8 +19,36 @@ public class Test {
     private Set<TestAttempt> testAttempts = new HashSet<>();
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Question> testQuestions = new HashSet<>();
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     public Test() {
+    }
+
+    public Test(String name, Date date,
+                Set<TestAttempt> testAttempts, Set<Question> testQuestions, Category category) {
+        this.name = name;
+        this.date = date;
+        this.testAttempts = testAttempts;
+        this.testQuestions = testQuestions;
+        this.category = category;
+    }
+
+    public Set<TestAttempt> getTestAttempts() {
+        return testAttempts;
+    }
+
+    public void setTestAttempts(Set<TestAttempt> testAttempts) {
+        this.testAttempts = testAttempts;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public int getId() {

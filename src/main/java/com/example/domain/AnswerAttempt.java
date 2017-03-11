@@ -16,15 +16,15 @@ public class AnswerAttempt {
     private TestAttempt testAttempt;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "question_id")
-    private Question question2;
+    private Question question;
 
     public AnswerAttempt() {
     }
 
-    public AnswerAttempt(int userAnswer, TestAttempt testAttempt, Question question2) {
+    public AnswerAttempt(int userAnswer, TestAttempt testAttempt, Question question) {
         this.userAnswer = userAnswer;
         this.testAttempt = testAttempt;
-        this.question2 = question2;
+        this.question = question;
     }
 
     public Long getId() {
@@ -51,11 +51,11 @@ public class AnswerAttempt {
         this.testAttempt = testAttempt;
     }
 
-    public Question getQuestion2() {
-        return question2;
+    public Question getQuestion() {
+        return question;
     }
 
-    public void setQuestion2(Question question2) {
-        this.question2 = question2;
+    public void setQuestion(Question question) {
+        this.question = question;
     }
 }

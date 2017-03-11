@@ -21,7 +21,7 @@ public class Question {
     private Test test;
     @OneToOne(mappedBy = "question")
     private CorrectAnswer correctAnswer;
-    @OneToMany(mappedBy = "question2")
+    @OneToMany(mappedBy = "question")
     private Set<AnswerAttempt> answerAttempts = new HashSet<>();
 
     public Question(String name, int var1, int var2, String questionText, Test test) {

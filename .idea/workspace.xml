@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f15843d-ff40-4d0e-b16d-ad7cb634b697" name="Default" comment="Added AnswerAttemptRepository, CategoryRepository">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/example/Repository/AnswerAttemptRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/example/Repository/CategoryRepository.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/Repository/QuestionRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/Repository/QuestionRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/AnswerAttempt.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/AnswerAttempt.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/domain/Question.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/domain/Question.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -46,8 +41,8 @@
           <file leaf-file-name="CategoryRepository.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Repository/CategoryRepository.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+                <state relative-caret-position="242">
+                  <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -974,7 +969,7 @@
       <workItem from="1488302364537" duration="216000" />
       <workItem from="1488302609622" duration="1641000" />
       <workItem from="1488663936480" duration="15875000" />
-      <workItem from="1489081434368" duration="11803000" />
+      <workItem from="1489081434368" duration="11841000" />
     </task>
     <task id="LOCAL-00001" summary="Created TestAttempt and Test entities and got the maping for TestAttempt working. Need to continue working on further creating database relations.">
       <created>1488668816127</created>
@@ -1011,11 +1006,18 @@
       <option name="project" value="LOCAL" />
       <updated>1489188230857</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added AnswerAttemptRepository, CategoryRepository">
+      <created>1489192626716</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1489192626716</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87190000" />
+    <option name="totallyTimeSpent" value="87228000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1063,14 +1065,17 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Created TestAttempt and Test entities and got the maping for TestAttempt working. Need to continue working on further creating database relations." />
     <MESSAGE value="Completed first attempt at database design." />
     <MESSAGE value="Added category to Test" />
     <MESSAGE value="Added TestRepository" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added TestRepository" />
+    <MESSAGE value="Added AnswerAttemptRepository, CategoryRepository" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AnswerAttemptRepository, CategoryRepository" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1388,8 +1393,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/Repository/CategoryRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="37" lean-forward="false" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        <state relative-caret-position="242">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

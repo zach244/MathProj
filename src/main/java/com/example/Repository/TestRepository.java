@@ -11,10 +11,7 @@ import java.util.List;
  */
 public interface TestRepository extends CrudRepository<Test, Integer> {
     List<Test> findByCategory(int category_id);
-
     Test findById(int id);
-
     List<Test> findByDate(Date date);
-
     Test findByName(String name);
 }

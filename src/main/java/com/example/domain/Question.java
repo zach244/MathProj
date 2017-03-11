@@ -109,4 +109,16 @@ public class Question {
     public void setAnswerAttempts(Set<AnswerAttempt> answerAttempts) {
         this.answerAttempts = answerAttempts;
     }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", var1=" + var1 +
+                ", var2=" + var2 +
+                ", questionText='" + questionText + '\'' +
+                ", test=" + test +
+                '}';
+    }
 }

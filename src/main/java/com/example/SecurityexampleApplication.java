@@ -26,6 +26,8 @@ public class SecurityexampleApplication implements CommandLineRunner {
     private TestService testService;
     @Autowired
     private TestAttemptService testAttemptService;
+    @Autowired
+    private AnswerAttemptService answerAttemptService;
 
     public static void main(String[] args) {
         SpringApplication.run(SecurityexampleApplication.class, args);
@@ -67,7 +69,9 @@ public class SecurityexampleApplication implements CommandLineRunner {
             System.out.print(qu.toString());
             System.out.println();
         }
-
-        testAttemptService.createTestAttempt("test",user,test); //issue with createTestAttempt
+        Question question = questionService.createQuestion(56,67,
+                "answer attempt question",test);
+        TestAttempt testAttempt  = testAttemptService.createTestAttempt("test",user,test); //issue with createTestAttempt
+        AnswerAttempt answerAttempt = answerAttemptService.createAnswerAttempt(40,testAttempt,question);
     }
 }

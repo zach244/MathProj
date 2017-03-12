@@ -26,12 +26,9 @@ public class Test {
     public Test() {
     }
 
-    public Test(String name, Date date,
-                Set<TestAttempt> testAttempts, Set<Question> testQuestions, Category category) {
+    public Test(String name, Date date,Category category) {
         this.name = name;
         this.date = date;
-        this.testAttempts = testAttempts;
-        this.testQuestions = testQuestions;
         this.category = category;
     }
 

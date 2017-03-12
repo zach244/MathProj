@@ -33,11 +33,11 @@ public class TestService {
      */
     @Transactional
     public Test createTest(String name, Date date, Category category) {
-        Test newTest = new Test();
-        newTest.setName(name);
-        newTest.setDate(date);
-        Category newCategory = categoryRepository.findByName(category.getName());
-        newTest.setCategory(newCategory);
+       if(name == null || date == null || category == null)
+       {
+           LOG.info("Passed argument is null");
+       }
+        Test newTest = new Test(name,date,categoryRepository.findByName(category.getName()));
         testRepository.save(newTest);
         return newTest;
     }

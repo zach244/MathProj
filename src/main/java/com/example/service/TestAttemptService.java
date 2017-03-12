@@ -16,7 +16,7 @@ import org.springframework.transaction.annotation.Transactional;
  * Created by zach on 3/11/2017.
  */
 @Service
-@Transactional(readOnly = true)
+@Transactional
 public class TestAttemptService {
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
 
@@ -36,7 +36,7 @@ public class TestAttemptService {
        TestAttempt testAttempt = new TestAttempt(attemptName,
                userRepository.findByUsername(user.getUsername()),
                testRepository.findById(test.getId()));
-
+        testAttemptRepository.save(testAttempt);
         return testAttempt;
     }
 

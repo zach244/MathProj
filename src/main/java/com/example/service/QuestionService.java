@@ -23,18 +23,19 @@ public class QuestionService {
     private QuestionRepository questionRepository;
 
     @Transactional
-    public Question createQuestion(Question question, Test test)
-    {   Question localQuestion = questionRepository.findById(question.getId());
+    public Question createQuestion(int variable1,int variable2,
+                                   String questionText, Test test) //issue with getting test id
+    {   Question localQuestion = new Question();
         Test localTest = testRepository.findById(test.getId());
-        if(question == null || test == null)
+        if(localTest == null)
         {
-            LOG.info("The question can't be null or Test can't be null");
+            LOG.info("localTest is null");
         }
-        else
-        {
-            localQuestion.setTest(test);
-            localQuestion = questionRepository.save(question);
-        }
+        localQuestion.setVar1(variable1);
+        localQuestion.setVar2(variable2);
+        localQuestion.setQuestionText(questionText);
+        localQuestion.setTest(localTest);
+        questionRepository.save(localQuestion);
         return localQuestion;
     }
 }

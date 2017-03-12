@@ -37,25 +37,18 @@ public class SecurityexampleApplication implements CommandLineRunner {
         category.setName("Addition");
         categoryService.createCategory(category);
 
-        Test test = new Test();
-        test.setCategory(category);
-        test.setName("addition 1");
+
         String date_s = "2011-01-18 00:00:00.0";
         // *** note that it's "yyyy-MM-dd hh:mm:ss" not "yyyy-mm-dd hh:mm:ss"
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
         Date date = dt.parse(date_s);
         // *** same for the format String below
         SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
-        test.setDate(date);
-
-        testService.createTest(test,category);
 
 
-//        Question question = new Question();
-//        question.setName("Addition 1");
-//        question.setVar1(3);
-//        question.setVar2(5);
-//        question.setQuestionText("Add the 2 variables together");
-//        questionService.createQuestion(question,test); //Need to create Test service
+        Test test = testService.createTest("test 1", date, category);
+
+
+       questionService.createQuestion(3,4,"Please add 3 and 4 together",test);//Need to create Test service
     }
 }

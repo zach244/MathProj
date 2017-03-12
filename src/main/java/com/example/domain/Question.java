@@ -12,7 +12,7 @@ public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
+
     private int var1;
     private int var2;
     private String questionText;
@@ -24,27 +24,18 @@ public class Question {
     @OneToMany(mappedBy = "question")
     private Set<AnswerAttempt> answerAttempts = new HashSet<>();
 
-    public Question(String name, int var1, int var2, String questionText, Test test) {
-        this.name = name;
-        this.var1 = var1;
-        this.var2 = var2;
-        this.questionText = questionText;
-        this.test = test;
-    }
+
 
     public Question() {
     }
 
-    public Question(String name, int var1, int var2, String questionText, Test test,
-                    CorrectAnswer correctAnswer, Set<AnswerAttempt> answerAttempts) {
-        this.name = name;
+    public Question(int var1, int var2, String questionText, Test test) {
         this.var1 = var1;
         this.var2 = var2;
         this.questionText = questionText;
         this.test = test;
-        this.correctAnswer = correctAnswer;
-        this.answerAttempts = answerAttempts;
     }
+
 
     public Long getId() {
         return id;
@@ -54,13 +45,7 @@ public class Question {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public int getVar1() {
         return var1;
@@ -110,15 +95,4 @@ public class Question {
         this.answerAttempts = answerAttempts;
     }
 
-    @Override
-    public String toString() {
-        return "Question{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", var1=" + var1 +
-                ", var2=" + var2 +
-                ", questionText='" + questionText + '\'' +
-                ", test=" + test +
-                '}';
-    }
 }

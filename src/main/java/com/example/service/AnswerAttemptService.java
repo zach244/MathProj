@@ -43,8 +43,6 @@ public class AnswerAttemptService {
         AnswerAttempt answerAttempt = new AnswerAttempt(userAnswer,
                testAttemptRepository.findById(testAttempt.getId()),
                 questionRepository.findById(question.getId()));
-
-
         answerAttemptRepository.save(answerAttempt);
             return answerAttempt;
     }

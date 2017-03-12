@@ -77,4 +77,13 @@ public class TestAttempt {
         this.answerAttempts = answerAttempts;
     }
 
+    @Override
+    public String toString() {
+        return "TestAttempt{" +
+                "id=" + id +
+                ", attemptName='" + attemptName + '\'' +
+                ", user=" + user +
+                ", test=" + test +
+                '}';
+    }
 }

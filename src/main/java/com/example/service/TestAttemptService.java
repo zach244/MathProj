@@ -50,5 +50,11 @@ public class TestAttemptService {
         testAttemptRepository.save(testAttempt);
         return testAttempt;
     }
-
+      //TODO
+//    public List<TestAttempt> returnTestAttempts(User user,Test test)
+//    {
+//        List<TestAttempt> testAttempts = testAttemptRepository.findByUserIdAndTestId(test.getId(),
+//                user.getId()); // issue with this method
+//        return testAttempts;
+//    }
 }

@@ -25,11 +25,11 @@ public class TestService {
     private TestRepository testRepository;
 
     /**
-     * This method createse a new Test object with the passed parameters.
+     *
      * @param name
      * @param date
      * @param category
-     * @return Test
+     * @return
      */
     @Transactional
     public Test createTest(String name, Date date, Category category) {

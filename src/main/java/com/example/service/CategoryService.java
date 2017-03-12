@@ -17,20 +17,24 @@ public class CategoryService {
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
     @Autowired
     private CategoryRepository categoryRepository;
+
+
     @Transactional
-    public Category createCategory(Category category)
-    {   if(category == null)
+    public Category createCategory(String name)
+    {    Category newCategory = categoryRepository.findByName(name);
+            Category category = new Category(name);
+        if(name == null)
         {
             LOG.info("Category can't be null");
         }
-        Category newCategory = categoryRepository.findByName(category.getName());
-        if( newCategory != null)
+        if(newCategory != null)
         {
-            LOG.info("Category with name already exists");
+            LOG.info("Category has already been created");
         }
-        else {
-          newCategory = categoryRepository.save(category);
+        else{
+
+            categoryRepository.save(category);
         }
-        return newCategory;
+            return category;
     }
 }

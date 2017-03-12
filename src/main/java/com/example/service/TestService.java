@@ -23,6 +23,14 @@ public class TestService {
     private CategoryRepository categoryRepository;
     @Autowired
     private TestRepository testRepository;
+
+    /**
+     * This method createse a new Test object with the passed parameters.
+     * @param name
+     * @param date
+     * @param category
+     * @return Test
+     */
     @Transactional
     public Test createTest(String name, Date date, Category category) {
         Test newTest = new Test();

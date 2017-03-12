@@ -95,4 +95,14 @@ public class Question {
         this.answerAttempts = answerAttempts;
     }
 
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", var1=" + var1 +
+                ", var2=" + var2 +
+                ", questionText='" + questionText + '\'' +
+                ", test=" + test +
+                '}';
+    }
 }

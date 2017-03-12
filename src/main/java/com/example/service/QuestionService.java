@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by zach on 3/11/2017.
  */
@@ -22,6 +24,14 @@ public class QuestionService {
     @Autowired
     private QuestionRepository questionRepository;
 
+    /**
+     * Creates a new questions if the test passed as an argument wasn't null.
+     * @param variable1
+     * @param variable2
+     * @param questionText
+     * @param test
+     * @return
+     */
     @Transactional
     public Question createQuestion(int variable1,int variable2,
                                    String questionText, Test test) //issue with getting test id
@@ -37,5 +47,10 @@ public class QuestionService {
         localQuestion.setTest(localTest);
         questionRepository.save(localQuestion);
         return localQuestion;
+    }
+    public List<Question> testQuestions(Test test)
+    {
+        List<Question> testQuestions = questionRepository.findByTestId(test.getId());
+        return testQuestions;
     }
 }

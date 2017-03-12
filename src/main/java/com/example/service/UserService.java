@@ -28,7 +28,14 @@ public class UserService {
     @Autowired
     private BCryptPasswordEncoder passwordEncoder;
 
-    @org.springframework.transaction.annotation.Transactional
+    /**
+     * checks to see if the user has already been created, if it has been created, throws error message in log, if not
+     * creates a new user with the passed arguments
+     * @param user
+     * @param userRoles
+     * @return
+     */
+    @Transactional
     public User createUser(User user, Set<UserRole> userRoles) {
         User localUser = userRepository.findByUsername(user.getUsername());
         if (localUser != null) {

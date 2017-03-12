@@ -1,6 +1,7 @@
 package com.example;
 
 import com.example.domain.Category;
+import com.example.domain.Question;
 import com.example.domain.Test;
 import com.example.service.CategoryService;
 import com.example.service.QuestionService;
@@ -13,6 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 @SpringBootApplication
 public class SecurityexampleApplication implements CommandLineRunner {
@@ -33,10 +35,10 @@ public class SecurityexampleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Category category = new Category();
-        category.setName("Addition");
-        categoryService.createCategory(category);
 
+
+
+        Category category = categoryService.createCategory("Addition");//creates new category of addition
 
         String date_s = "2011-01-18 00:00:00.0";
         // *** note that it's "yyyy-MM-dd hh:mm:ss" not "yyyy-mm-dd hh:mm:ss"
@@ -46,9 +48,17 @@ public class SecurityexampleApplication implements CommandLineRunner {
         SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
 
 
-        Test test = testService.createTest("test 1", date, category);
+        Test test = testService.createTest("test 1", date, category);//test creation
 
-
-       questionService.createQuestion(3,4,"Please add 3 and 4 together",test);//Need to create Test service
+        for(int i = 0; i <= 30; i++) // generate questions
+        {
+            questionService.createQuestion(i,i + 1,"Please add both the variables together",test);//Need to create Test service\
+        }
+        List<Question> testQuestions = questionService.testQuestions(test);
+        for (Question qu : testQuestions)
+        {
+            System.out.print(qu.toString());
+            System.out.println();
+        }
     }
 }

@@ -35,19 +35,17 @@ public class TestAttemptService {
     private UserService userService;
 
     /**
-     * Creates new test attempt by using repositories to find user
-     * and test then saves them in object
-     * @param attemptName
+     *
      * @param user
      * @param test
      * @return
      */
-    public TestAttempt createTestAttempt(String attemptName, User user, Test test)
-    {   if(attemptName == null || user == null || test == null)
+    public TestAttempt createTestAttempt( User user, Test test)
+    {   if(user == null || test == null)
     {
         LOG.info("argument passed can't be null");
     }
-       TestAttempt testAttempt = new TestAttempt(attemptName,
+       TestAttempt testAttempt = new TestAttempt(
                userRepository.findByUsername(user.getUsername()),
                testRepository.findById(test.getId()));
         testAttemptRepository.save(testAttempt);

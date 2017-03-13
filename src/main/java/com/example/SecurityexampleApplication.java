@@ -36,8 +36,6 @@ public class SecurityexampleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-
-
             User user = new User();
         	user.setUsername("zach");
             user.setPassword("password");
@@ -56,7 +54,6 @@ public class SecurityexampleApplication implements CommandLineRunner {
         // *** same for the format String below
         SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
 
-
         Test test = testService.createTest("test 1", date, category);//test creation
 
         for(int i = 0; i <= 30; i++) // generate questions
@@ -71,12 +68,12 @@ public class SecurityexampleApplication implements CommandLineRunner {
 //        }
         Question question = questionService.createQuestion(56,67,
                 "answer attempt question",test);
-        TestAttempt testAttempt  = testAttemptService.createTestAttempt("test",user,test); //issue with createTestAttempt
+        TestAttempt testAttempt  = testAttemptService.createTestAttempt(user,test); //issue with createTestAttempt
         AnswerAttempt answerAttempt = answerAttemptService.createAnswerAttempt(40,
                 testAttempt,question);
         for(int i = 0; i <=30; i++)
         {
-            testAttemptService.createTestAttempt("test"+i,user,test);
+            testAttemptService.createTestAttempt(user,test);
         }
         List<TestAttempt> testAttempts = testAttemptService.returnTestAttempts(user,test);
         for(TestAttempt ta : testAttempts)

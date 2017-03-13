@@ -12,6 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by zach on 3/11/2017.
  */
@@ -51,10 +54,13 @@ public class TestAttemptService {
         return testAttempt;
     }
       //TODO
-//    public List<TestAttempt> returnTestAttempts(User user,Test test)
-//    {
-//        List<TestAttempt> testAttempts = testAttemptRepository.findByUserIdAndTestId(test.getId(),
-//                user.getId()); // issue with this method
-//        return testAttempts;
-//    }
+    public List<TestAttempt> returnTestAttempts(User user, Test test)
+    {
+        List<TestAttempt> testAttempts = new ArrayList<>();
+        for (TestAttempt ta: testAttemptRepository.findByUserIdAndTestId(user.getId(),test.getId()) //this should work
+             ) {
+            testAttempts.add(ta);
+        }
+        return testAttempts;
+    }
 }

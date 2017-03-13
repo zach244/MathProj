@@ -10,8 +10,6 @@ import java.util.List;
  */
 public interface TestAttemptRepository extends CrudRepository<TestAttempt,Long>{
     TestAttempt findById(Long id);
-    List<TestAttempt> findByUserId(int id);
-    List<TestAttempt> findByUserIdAndTestId(int test_id, Long user_id);
-    List<TestAttempt> findByTestId(int test_id);
+    List<TestAttempt> findByUserIdAndTestId(Long user_id,int test_id);
 
 }

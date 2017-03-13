@@ -82,8 +82,8 @@ public class TestAttempt {
         return "TestAttempt{" +
                 "id=" + id +
                 ", attemptName='" + attemptName + '\'' +
-                ", user=" + user +
-                ", test=" + test +
+                ", user=" + user.toString() +
+                ", test=" + test.toString() +
                 '}';
     }
 }

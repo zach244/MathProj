@@ -80,4 +80,13 @@ public class Test {
     public void setTestQuestions(Set<Question> testQuestions) {
         this.testQuestions = testQuestions;
     }
+
+    @Override
+    public String toString() {
+        return "Test{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", date=" + date +
+                '}';
+    }
 }

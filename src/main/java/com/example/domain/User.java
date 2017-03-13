@@ -110,4 +110,12 @@ public class User implements UserDetails { //defines the user entity, and how to
     public void setTestAttempts(Set<TestAttempt> testAttempts) {
         this.testAttempts = testAttempts;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                '}';
+    }
 }

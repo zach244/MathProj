@@ -13,7 +13,7 @@ public class TestAttempt {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String attemptName;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
@@ -23,16 +23,13 @@ public class TestAttempt {
     @OneToMany(mappedBy = "testAttempt", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<AnswerAttempt> answerAttempts = new HashSet<>();
 
-    public TestAttempt(String attemptName) {
-        this.attemptName = attemptName;
-    }
+
 
     public TestAttempt() {
 
     }
 
-    public TestAttempt(String attemptName, User user, Test test) {
-        this.attemptName = attemptName;
+    public TestAttempt(User user, Test test) {
         this.user = user;
         this.test = test;
     }
@@ -45,13 +42,7 @@ public class TestAttempt {
         this.id = id;
     }
 
-    public String getAttemptName() {
-        return attemptName;
-    }
 
-    public void setAttemptName(String attemptName) {
-        this.attemptName = attemptName;
-    }
 
     public User getUser() {
         return user;
@@ -81,7 +72,6 @@ public class TestAttempt {
     public String toString() {
         return "TestAttempt{" +
                 "id=" + id +
-                ", attemptName='" + attemptName + '\'' +
                 ", user=" + user.toString() +
                 ", test=" + test.toString() +
                 '}';

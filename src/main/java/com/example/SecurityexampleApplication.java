@@ -71,12 +71,12 @@ public class SecurityexampleApplication implements CommandLineRunner {
 //        }
         Question question = questionService.createQuestion(56,67,
                 "answer attempt question",test);
-        TestAttempt testAttempt  = testAttemptService.createTestAttempt("test",user,test); //issue with createTestAttempt
+        TestAttempt testAttempt  = testAttemptService.createTestAttempt(user,test); //issue with createTestAttempt
         AnswerAttempt answerAttempt = answerAttemptService.createAnswerAttempt(40,
                 testAttempt,question);
         for(int i = 0; i <=30; i++)
         {
-            testAttemptService.createTestAttempt("test"+i,user,test);
+            testAttemptService.createTestAttempt(user,test);
         }
         List<TestAttempt> testAttempts = testAttemptService.returnTestAttempts(user,test);
         for(TestAttempt ta : testAttempts)

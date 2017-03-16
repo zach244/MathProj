@@ -53,7 +53,13 @@ public class TestAttemptService {
         testAttemptRepository.save(testAttempt);
         return testAttempt;
     }
-      //TODO
+
+    /**
+     * returns a list of all test attempts of a certain test, and a certain user
+     * @param user
+     * @param test
+     * @return
+     */
     public List<TestAttempt> returnTestAttempts(User user, Test test)
     {
         List<TestAttempt> testAttempts = new ArrayList<>();

@@ -35,28 +35,28 @@ public class TestAttemptService {
     private UserService userService;
 
     /**
-     *
      * @param user
      * @param test
      * @return
      */
-    public TestAttempt createTestAttempt( User user, Test test)
-    {   if(user == null || test == null)
-    {
-        LOG.info("argument passed can't be null");
-    }
-       TestAttempt testAttempt = new TestAttempt(
-               userRepository.findByUsername(user.getUsername()),
-               testRepository.findById(test.getId()));
+    public TestAttempt createTestAttempt(User user, Test test) {
+        if (user == null || test == null) {
+            LOG.info("argument passed can't be null");
+        }
+        TestAttempt testAttempt = new TestAttempt(
+                userRepository.findByUsername(user.getUsername()),
+                testRepository.findById(test.getId()));
         testAttemptRepository.save(testAttempt);
         return testAttempt;
     }
-      //TODO
-    public List<TestAttempt> returnTestAttempts(User user, Test test)
-    {
+
+    public List<TestAttempt> returnTestAttempts(User user, Test test) {
+        if (user == null || test == null) {
+            LOG.info("argument passed can't be null");
+        }
         List<TestAttempt> testAttempts = new ArrayList<>();
-        for (TestAttempt ta: testAttemptRepository.findByUserIdAndTestId(user.getId(),test.getId()) //this should work
-             ) {
+        for (TestAttempt ta : testAttemptRepository.findByUserIdAndTestId(user.getId(), test.getId()) //this should work
+                ) {
             testAttempts.add(ta);
         }
         return testAttempts;

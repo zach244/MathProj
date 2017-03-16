@@ -34,8 +34,6 @@ public class TestAttempt {
         this.test = test;
     }
 
-
-
     public Long getId() {
         return id;
     }
@@ -43,6 +41,8 @@ public class TestAttempt {
     public void setId(Long id) {
         this.id = id;
     }
+
+
 
     public User getUser() {
         return user;
@@ -64,6 +64,9 @@ public class TestAttempt {
         return answerAttempts;
     }
 
+    public void setAnswerAttempts(Set<AnswerAttempt> answerAttempts) {
+        this.answerAttempts = answerAttempts;
+    }
 
     @Override
     public String toString() {

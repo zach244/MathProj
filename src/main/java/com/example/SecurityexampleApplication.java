@@ -36,6 +36,8 @@ public class SecurityexampleApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
+
+
             User user = new User();
         	user.setUsername("zach");
             user.setPassword("password");
@@ -53,6 +55,7 @@ public class SecurityexampleApplication implements CommandLineRunner {
         Date date = dt.parse(date_s);
         // *** same for the format String below
         SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
+
 
         Test test = testService.createTest("test 1", date, category);//test creation
 

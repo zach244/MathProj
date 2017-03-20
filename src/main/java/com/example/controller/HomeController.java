@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.domain.Role;
 import com.example.domain.User;
 import com.example.domain.UserRole;
+import com.example.service.TestService;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,14 +24,17 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private TestService testService;
+
     @RequestMapping("/login")
     public String login() {
         return "login";
     }
 
-    @RequestMapping("/payload")
-    public String payload() {
-        return "payload";
+    @RequestMapping("/tests")
+    public String tests() {
+        return "tests";
     }
 
     @RequestMapping("/registration")
@@ -57,7 +61,9 @@ public class HomeController {
         userRoles.add(new UserRole(userForm, role));
         userService.createUser(userForm, userRoles);
 
-        return "redirect:/payload";
+        return "redirect:/tests";
     }
 
+
 }
+

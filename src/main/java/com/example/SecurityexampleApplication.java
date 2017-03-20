@@ -37,7 +37,6 @@ public class SecurityexampleApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-
             User user = new User();
         	user.setUsername("zach");
             user.setPassword("password");

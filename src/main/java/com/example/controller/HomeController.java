@@ -32,11 +32,6 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping("/tests")
-    public String tests() {
-        return "tests";
-    }
-
     @RequestMapping("/registration")
     public String registration() {
         return "registration";

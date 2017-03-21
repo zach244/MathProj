@@ -35,16 +35,13 @@ public class QuestionService {
     @Transactional
     public Question createQuestion(int variable1,int variable2,
                                    String questionText, Test test) //issue with getting test id
-    {   Question localQuestion = new Question();
+    {
         Test localTest = testRepository.findById(test.getId());
         if(localTest == null)
         {
             LOG.info("localTest is null");
         }
-        localQuestion.setVar1(variable1);
-        localQuestion.setVar2(variable2);
-        localQuestion.setQuestionText(questionText);
-        localQuestion.setTest(localTest);
+        Question localQuestion = new Question(variable1,variable2,questionText,localTest);
         questionRepository.save(localQuestion);
         return localQuestion;
     }
@@ -53,4 +50,5 @@ public class QuestionService {
         List<Question> testQuestions = questionRepository.findByTestId(test.getId());
         return testQuestions;
     }
+
 }

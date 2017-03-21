@@ -1,12 +1,17 @@
 package com.example.controller;
 
+import com.example.Repository.TestRepository;
 import com.example.domain.Test;
 import com.example.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -14,19 +19,22 @@ import java.util.Set;
  */
 
 @Controller
-@RequestMapping("/tests")
 public class TestController {
     @Autowired
   private TestService testService;
-    @RequestMapping(value = "/tests", method = RequestMethod.GET)
-    public Set<Test>getTests() {
-        Set<Test> tests;
-        tests = testService.findAll();
-        return tests;
-    }
-
+  @Autowired
+  private TestRepository testRepository;
+    @RequestMapping("/tests")
 public String tests()
 {
     return "tests";
+}
+
+
+@RequestMapping(value = "test", method = RequestMethod.GET)
+    public String testsAll(Model model)
+{
+   model.addAttribute("tests",testRepository.findAll());
+   return "tests/list";
 }
 }

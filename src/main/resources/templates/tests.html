@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="en">
 
+<body><tr th:each="test : ${tests}">
+    <td th:text="${test.id}"></td>
+    <td th:text="${test.name}"></td>
+    <td th:text="${test.date}"></td>
+</tr></body>
+
 <!--<h2>Owners</h2>-->
 
 <!--<table class="table table-striped" th:action="">-->

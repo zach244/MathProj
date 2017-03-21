@@ -82,5 +82,11 @@ public class SecurityexampleApplication implements CommandLineRunner {
         {
             System.out.println(ta.toString());
         }
+        Set<Test> tests = testService.findAll();
+        for(Test te : tests)
+        {
+            System.out.println(te.toString());
+        }
+
     }
 }

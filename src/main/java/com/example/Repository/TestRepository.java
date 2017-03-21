@@ -14,4 +14,5 @@ public interface TestRepository extends CrudRepository<Test, Integer> {
     Test findById(int id);
     List<Test> findByDate(Date date);
     Test findByName(String name);
+    List<Test> findAll();
 }

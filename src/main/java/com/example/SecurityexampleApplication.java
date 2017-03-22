@@ -58,35 +58,35 @@ public class SecurityexampleApplication implements CommandLineRunner {
 
         Test test = testService.createTest("test 1", date, category);//test creation
 
-        for(int i = 0; i <= 30; i++) // generate questions
-        {
-            questionService.createQuestion(i,i + 1,"Please add both the variables together",test);//Need to create Test service\
-        }
-//        List<Question> testQuestions = questionService.testQuestions(test);
-//        for (Question qu : testQuestions)
+//        for(int i = 0; i <= 30; i++) // generate questions
 //        {
-//            System.out.print(qu.toString());
-//            System.out.println();
+//            questionService.createQuestion(i,i + 1,"Please add both the variables together",test);//Need to create Test service\
 //        }
-        Question question = questionService.createQuestion(56,67,
-                "answer attempt question",test);
-        TestAttempt testAttempt  = testAttemptService.createTestAttempt(user,test); //issue with createTestAttempt
-        AnswerAttempt answerAttempt = answerAttemptService.createAnswerAttempt(40,
-                testAttempt,question);
-        for(int i = 0; i <=30; i++)
-        {
-            testAttemptService.createTestAttempt(user,test);
-        }
-        List<TestAttempt> testAttempts = testAttemptService.returnTestAttempts(user,test);
-        for(TestAttempt ta : testAttempts)
-        {
-            System.out.println(ta.toString());
-        }
-        Set<Test> tests = testService.findAll();
-        for(Test te : tests)
-        {
-            System.out.println(te.toString());
-        }
+////        List<Question> testQuestions = questionService.testQuestions(test);
+////        for (Question qu : testQuestions)
+////        {
+////            System.out.print(qu.toString());
+////            System.out.println();
+////        }
+//        Question question = questionService.createQuestion(56,67,
+//                "answer attempt question",test);
+//        TestAttempt testAttempt  = testAttemptService.createTestAttempt(user,test); //issue with createTestAttempt
+//        AnswerAttempt answerAttempt = answerAttemptService.createAnswerAttempt(40,
+//                testAttempt,question);
+//        for(int i = 0; i <=30; i++)
+//        {
+//            testAttemptService.createTestAttempt(user,test);
+//        }
+//        List<TestAttempt> testAttempts = testAttemptService.returnTestAttempts(user,test);
+//        for(TestAttempt ta : testAttempts)
+//        {
+//            System.out.println(ta.toString());
+//        }
+//        Set<Test> tests = testService.findAll();
+//        for(Test te : tests)
+//        {
+//            System.out.println(te.toString());
+//        }
 
     }
 }

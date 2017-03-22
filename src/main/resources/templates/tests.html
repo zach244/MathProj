@@ -1,65 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="en">
 
-<body><tr th:each="test : ${tests}">
-    <td th:text="${test.id}"></td>
-    <td th:text="${test.name}"></td>
-    <td th:text="${test.date}"></td>
-</tr></body>
 
-<!--<h2>Owners</h2>-->
 
-<!--<table class="table table-striped" th:action="">-->
-    <!--<thead>-->
-    <!--<tr>-->
-        <!--<th style="width: 150px;">Id</th>-->
-        <!--<th style="width: 200px;">Name</th>-->
-        <!--<th>Date</th>-->
-        <!--<th>Category</th>-->
+<h2>Tests</h2>
 
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody>-->
-    <!--<tr th:each="test : ${tests}">-->
-        <!--<td>-->
-            <!--<a-->
-               <!--th:href="@{/tests}"-->
-               <!--th:text="${test.id}">Mary Smith</a>-->
-        <!--</td>-->
-        <!--<td th:text="${test.name}">45, Oxford Street</td>-->
-        <!--<td th:text="${test.date}">Cambridge</td>-->
-        <!--<td th:text="${test.category_id}">555-555-555</td>-->
-        <!--<td>-->
-        <!--</td>-->
-    <!--</tr>-->
-    <!--</tbody>-->
-<!--</table>-->
-<!--<h2>Owners</h2>-->
 
-<!--<table class="table table-striped" th:action="">-->
-    <!--<thead>-->
-    <!--<tr>-->
-        <!--<th style="width: 150px;">Id</th>-->
-        <!--<th style="width: 200px;">Name</th>-->
-        <!--<th>Date</th>-->
-        <!--<th>Category</th>-->
 
-    <!--</tr>-->
-    <!--</thead>-->
-    <!--<tbody>-->
-    <!--<tr th:each="test : ${tests}">-->
-        <!--<td>-->
-            <!--<a-->
-               <!--th:href="@{/tests}"-->
-               <!--th:text="${test.id}">Mary Smith</a>-->
-        <!--</td>-->
-        <!--<td th:text="${test.name}">45, Oxford Street</td>-->
-        <!--<td th:text="${test.date}">Cambridge</td>-->
-        <!--<td th:text="${test.category_id}">555-555-555</td>-->
-        <!--<td>-->
-        <!--</td>-->
-    <!--</tr>-->
-    <!--</tbody>-->
-<!--</table>-->
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 200px;">Name</th>
+        <th>Date</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="test : ${testsAll}">
+        <td th:text="${test.id}">1</td>
+        <td><a href="questions.html"
+               th:href="@{|/tests/${test.id}|}"
+               th:text="${test.name}">Title ...</a></td>
+        <td th:text="${test.date}">Text ...</td>
+        <td th:text ="${test.getCategory()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
 
 </html>

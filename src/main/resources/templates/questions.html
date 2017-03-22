@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+
+
+
+<h2>Tests</h2>
+
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 200px;">Text</th>
+        <th style="width: 150px;">var1</th>
+        <th style="width: 200px;">var2</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="question : ${questionList}">
+        <td th:text="${question.id}">1</td>
+        <td><a href="#" th:text="${question.text}">Title ...</a></td>
+        <td th:text="${question.var1">Text ...</td>
+        <td th:text ="${question.var2}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+</html>

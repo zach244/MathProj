@@ -51,4 +51,9 @@ public class Category {
     public void setTestCategories(Set<Test> testCategories) {
         this.testCategories = testCategories;
     }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

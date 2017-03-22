@@ -87,6 +87,7 @@ public class Test {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", date=" + date +
+                ", category=" + category.toString() +
                 '}';
     }
 }

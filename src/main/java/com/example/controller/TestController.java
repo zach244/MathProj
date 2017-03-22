@@ -2,6 +2,7 @@ package com.example.controller;
 
 import com.example.Repository.TestRepository;
 import com.example.domain.Test;
+import com.example.domain.User;
 import com.example.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
@@ -21,20 +24,19 @@ import java.util.Set;
 @Controller
 public class TestController {
     @Autowired
-  private TestService testService;
-  @Autowired
-  private TestRepository testRepository;
-    @RequestMapping("/tests")
-public String tests()
-{
-    return "tests";
-}
+    private TestService testService;
+    @Autowired
+    private TestRepository testRepository;
 
+    @RequestMapping(value = "/tests", method = RequestMethod.GET)
+    public String registration(Model model) {
+       List<Test> testsAll = new LinkedList<>();
+        for (Test test : testRepository.findAll()
+             ) {
+            testsAll.add(test);
+        }
+        model.addAttribute("testsAll",testsAll);
 
-@RequestMapping(value = "test", method = RequestMethod.GET)
-    public String testsAll(Model model)
-{
-   model.addAttribute("tests",testRepository.findAll());
-   return "tests/list";
-}
+        return "tests";
+    }
 }

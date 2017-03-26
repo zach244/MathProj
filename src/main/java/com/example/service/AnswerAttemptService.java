@@ -33,6 +33,7 @@ public class AnswerAttemptService {
      * @param question
      * @return
      */
+    @Transactional
     public AnswerAttempt createAnswerAttempt(int userAnswer, TestAttempt testAttempt,
                                              Question question)
     {

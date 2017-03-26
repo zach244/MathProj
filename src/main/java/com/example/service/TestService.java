@@ -36,7 +36,7 @@ public class TestService {
      * @param category
      * @return
      */
-
+    @Transactional
     public Test createTest(String name, Date date, Category category) {
        if(name == null || date == null || category == null)
        {

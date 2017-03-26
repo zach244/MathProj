@@ -3,7 +3,7 @@
 
 
 
-<h2>Tests</h2>
+<h2>Questions</h2>
 
 
 
@@ -20,8 +20,8 @@
     <tbody>
     <tr th:each="question : ${questionList}">
         <td th:text="${question.id}">1</td>
-        <td><a href="#" th:text="${question.text}">Title ...</a></td>
-        <td th:text="${question.var1">Text ...</td>
+        <td><a href="#" th:text="${question.questionText}"></a></td>
+        <td th:text="${question.var1}"></td>
         <td th:text ="${question.var2}"></td>
     </tr>
     </tbody>

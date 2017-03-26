@@ -19,7 +19,7 @@ public class CategoryService {
     private CategoryRepository categoryRepository;
 
 
-
+    @Transactional
     public Category createCategory(String name)
     {    Category newCategory = categoryRepository.findByName(name);
             Category category = new Category(name);

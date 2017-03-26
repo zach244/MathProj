@@ -42,6 +42,7 @@ public class TestAttemptService {
      * @param test
      * @return
      */
+    @Transactional
     public TestAttempt createTestAttempt(User user, Test test)
     {   if(user == null || test == null)
     {

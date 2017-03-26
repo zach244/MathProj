@@ -6,37 +6,30 @@ import com.example.domain.UserRole;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.runners.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static org.mockito.Mockito.mock;
 
 /**
  * Created by zach on 3/16/2017.
  */
+@RunWith(MockitoJUnitRunner.class)
 public class UserServiceTest {
 
-    User user;
-    @Autowired
-    UserRole userRole;
-    @Autowired
-    Role role;
-    @Autowired
-    UserService userService;
-
-    
+   @Autowired
+   private static UserService mockedUserService;
 
     @Before
     public void setUp() throws Exception {
-//    user = new User();
-//    user.setUsername("Test");
-//    user.setPassword("Test");
-//    role = new Role();
-//    role.setName("Admin");
-//    Set<UserRole> userRoles = new HashSet<>();
-//    userRole = new UserRole(user,role);
-//    userRoles.add(userRole);
-//    userService.createUser(user,userRoles);
+    mockedUserService = mock(UserService.class);
 
 
     }
+
+
+
 
     @After
     public void tearDown() throws Exception {

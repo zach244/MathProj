@@ -45,9 +45,9 @@ public class QuestionService {
         questionRepository.save(localQuestion);
         return localQuestion;
     }
-    public List<Question> testQuestions(Test test)
+    public List<Question> testQuestions(int id)
     {
-        List<Question> testQuestions = questionRepository.findByTestId(test.getId());
+        List<Question> testQuestions = questionRepository.findByTestId(id);
         return testQuestions;
     }
 

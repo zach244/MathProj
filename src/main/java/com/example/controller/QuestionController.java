@@ -6,6 +6,7 @@ import com.example.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,15 +25,15 @@ public class QuestionController {
     @Autowired
     private QuestionService questionService;
 
-    @RequestMapping(value ="/questions", method = RequestMethod.GET)
-    public String questions(Test test, Model model)
+    @RequestMapping(value ="/tests/{id}", method = RequestMethod.GET)
+    public String questions(@PathVariable("id")int id,Model model)
     {   List<Question> questionsList = new LinkedList<>();
-        for (Question question: questionService.testQuestions(test)
+        for (Question question: questionService.testQuestions(id)
              ) {
             questionsList.add(question);
-
         }
         model.addAttribute("questionList",questionsList);
         return "questions";
     }
+
 }

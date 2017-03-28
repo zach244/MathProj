@@ -35,5 +35,11 @@ public class QuestionController {
         model.addAttribute("questionList",questionsList);
         return "questions";
     }
+    @RequestMapping(value="/tests/{testid}/{questionid}", method = RequestMethod.GET)
+    public String questionInfo(@PathVariable("testid")int testid,@PathVariable("questionid") int questionid,Model model)
+    {
+
+        return "questions";
+    }
 
 }

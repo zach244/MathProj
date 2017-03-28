@@ -23,7 +23,7 @@ import java.security.SecureRandom;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String SALT = "slklddkdkdlsl12323ll2l2dldl";
     private static final String[] PUBLIC_MATCHERS = {
-            "/webjars/**",
+            "/webjars/*",
             "/css/**",
             "/js/**",
             "/images/**",
@@ -32,7 +32,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/contact/**",
             "/console/**",
             "/registration",
-            "resources/**"
+            "/resources/static/**",
+            "/resources/static/js",
+            "/resources/static/css"
 
 
 
@@ -58,7 +60,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         http                                     //setting all url properties I believe\
                 .authorizeRequests()
-                .antMatchers(PUBLIC_MATCHERS).permitAll().anyRequest().permitAll()
+                .antMatchers(PUBLIC_MATCHERS).permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/tests")

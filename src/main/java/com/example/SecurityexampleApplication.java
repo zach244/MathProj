@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.Set;
 
 @SpringBootApplication
-public class SecurityexampleApplication implements CommandLineRunner {
+public class SecurityexampleApplication implements CommandLineRunner{
 
     @Autowired
     private UserService userService;
@@ -58,7 +59,7 @@ public class SecurityexampleApplication implements CommandLineRunner {
 
         Test test = testService.createTest("test 1", date, category);//test creation
 
-        for(int i = 0; i <= 30; i++) // generate questions
+        for(int i = 0; i <= 100; i++) // generate questions
         {
             questionService.createQuestion(i,i + 1,"Please add both the variables together",test);//Need to create Test service\
         }
@@ -89,4 +90,5 @@ public class SecurityexampleApplication implements CommandLineRunner {
         }
 
    }
+
 }

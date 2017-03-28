@@ -1,3 +1,8 @@
-#leftnav{
-    color: #2aabd2;
+.leftnav{
+   background-color: lightblue;
+    height: 100vh;
+    overflow: auto;
+    width: 200px;
+
 }
+

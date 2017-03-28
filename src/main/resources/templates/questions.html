@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="en">
-
-    <!--<link rel="stylesheet" href="../static/css/questions.css" th:ref="@{css/questions.css}">-->
-
+<head>
+    <link rel="stylesheet" href="../static/css/questions.css" th:ref="@{/static/css/questions.css}" type="text/css" media="screen"/>
+</head>
 <h2>Questions</h2>
-<div id="leftnav">
+<div class="leftnav">
 <table class="table table-striped">
     <tbody>
     <tr th:each="question : ${questionList}">
-        <td><a href="#" th:text="${question.toString()}"></a></td>
+        <td><a href="questions.html"
+               th:href="@{|/tests/${question.getTest().getId()}/${question.id}|}"
+               th:text="${question.toString()}"></a></td>
     </tr>
     </tbody>
 </table>
 </div>
+
 </html>

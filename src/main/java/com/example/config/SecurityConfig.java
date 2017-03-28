@@ -32,6 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/contact/**",
             "/console/**",
             "/registration",
+            "resources/**"
 
 
 
@@ -54,9 +55,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             http.csrf().disable();
             http.headers().frameOptions().disable();
         }*/
+
         http                                     //setting all url properties I believe\
                 .authorizeRequests()
-                .antMatchers(PUBLIC_MATCHERS).permitAll()
+                .antMatchers(PUBLIC_MATCHERS).permitAll().anyRequest().permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/tests")

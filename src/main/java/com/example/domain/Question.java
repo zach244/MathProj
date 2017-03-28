@@ -97,12 +97,7 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question{" +
-                "Question " + id +
-                ", var1=" + var1 +
-                ", var2=" + var2 +
-                ", questionText='" + questionText + '\'' +
-                ", test=" + test +
-                '}';
+        return "Question " + id;
+
     }
 }

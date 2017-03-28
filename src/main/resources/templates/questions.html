@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="en">
 
-
+<head>
+    <link rel="stylesheet" href="../static/css/questions.css" th:ref="@{css/questions.css}">
+    <style>
+        #leftnav{
+         background: #2aabd2;
+        }
+    </style>
+</head>
 
 <h2>Questions</h2>
-
-
-
+<div id="leftnav">
 <table class="table table-striped">
-    <thead>
-    <tr>
-        <th style="width: 150px;">Id</th>
-        <th style="width: 200px;">Text</th>
-        <th style="width: 150px;">var1</th>
-        <th style="width: 200px;">var2</th>
-
-    </tr>
-    </thead>
     <tbody>
     <tr th:each="question : ${questionList}">
-        <td th:text="${question.id}">1</td>
-        <td><a href="#" th:text="${question.questionText}"></a></td>
-        <td th:text="${question.var1}"></td>
-        <td th:text ="${question.var2}"></td>
+        <td><a href="#" th:text="${question.toString()}"></a></td>
     </tr>
     </tbody>
 </table>
-
-
-
-
-
+</div>
 </html>

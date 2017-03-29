@@ -26,6 +26,7 @@ public class QuestionService {
 
     /**
      * Creates a new questions if the test passed as an argument wasn't null.
+     *
      * @param variable1
      * @param variable2
      * @param questionText
@@ -33,22 +34,25 @@ public class QuestionService {
      * @return
      */
     @Transactional
-    public Question createQuestion(int variable1,int variable2,
+    public Question createQuestion(int variable1, int variable2,
                                    String questionText, Test test) //issue with getting test id
     {
         Test localTest = testRepository.findById(test.getId());
-        if(localTest == null)
-        {
+        if (localTest == null) {
             LOG.info("localTest is null");
         }
-        Question localQuestion = new Question(variable1,variable2,questionText,localTest);
+        Question localQuestion = new Question(variable1, variable2, questionText, localTest);
         questionRepository.save(localQuestion);
         return localQuestion;
     }
-    public List<Question> testQuestions(int id)
-    {
-        List<Question> testQuestions = questionRepository.findByTestId(id);
+
+    public List<Question> testQuestions(int testId) {
+        List<Question> testQuestions = questionRepository.findByTestId(testId);
         return testQuestions;
     }
 
+    public Question getQuestion(Long questionId) {
+        Question question = questionRepository.findById(questionId);
+        return question;
+    }
 }

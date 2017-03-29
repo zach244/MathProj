@@ -7,16 +7,14 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.OneToMany;
 
 /**
  * Created by zach on 2/7/2017.
  */
 @Entity
-public class User implements UserDetails{ //defines the user entity, and how to return it.
+public class User implements UserDetails { //defines the user entity, and how to return it.
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-
     private Long id;
 
     @Column(unique = true)
@@ -26,8 +24,25 @@ public class User implements UserDetails{ //defines the user entity, and how to 
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<TestAttempt> testAttempts = new HashSet<>();
 
-    public User(){}
+    public User(String username, String password, Set<UserRole> userRoles) {
+        this.username = username;
+        this.password = password;
+        this.userRoles = userRoles;
+    }
+
+
+    public User(String username, String password, Set<UserRole> userRoles, Set<TestAttempt> testAttempts) {
+        this.username = username;
+        this.password = password;
+        this.userRoles = userRoles;
+        this.testAttempts = testAttempts;
+    }
+
+    public User() {
+    }
 
     public Long getId() {
         return id;
@@ -39,6 +54,10 @@ public class User implements UserDetails{ //defines the user entity, and how to 
 
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     @Override
@@ -61,15 +80,11 @@ public class User implements UserDetails{ //defines the user entity, and how to 
         return true;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() { // returns a hash set of all the users roles and names.
-       Set<GrantedAuthority> authorities = new HashSet<>();
-       userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
-       return authorities;
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+        return authorities;
     }
 
     public String getPassword() {
@@ -86,5 +101,21 @@ public class User implements UserDetails{ //defines the user entity, and how to 
 
     public void setUserRoles(Set<UserRole> userRoles) {
         this.userRoles = userRoles;
+    }
+
+    public Set<TestAttempt> getTestAttempts() {
+        return testAttempts;
+    }
+
+    public void setTestAttempts(Set<TestAttempt> testAttempts) {
+        this.testAttempts = testAttempts;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                '}';
     }
 }

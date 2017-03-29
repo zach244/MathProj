@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+
+
+
+<h2>Tests</h2>
+
+
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th style="width: 150px;">Id</th>
+        <th style="width: 200px;">Name</th>
+        <th>Date</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="test : ${testsAll}">
+        <td th:text="${test.id}">1</td>
+        <td><a href="questions.html"
+               th:href="@{|/tests/${test.id}|}"
+               th:text="${test.name}">Title ...</a></td>
+        <td th:text="${test.date}">Text ...</td>
+        <td th:text ="${test.getCategory()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+</html>

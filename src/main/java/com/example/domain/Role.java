@@ -11,18 +11,19 @@ import java.util.Set;
 public class Role { //defines role entity
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
 
     @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<UserRole> userRoles = new HashSet<>();
 
-    public int getId() {
-        return id;
+    public Role() {
+
     }
 
-    public Role(){
-
+    public int getId() {
+        return id;
     }
 
     public void setId(int id) {

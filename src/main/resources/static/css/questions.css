@@ -1,0 +1,16 @@
+.leftnav{
+   background-color: lightblue;
+    height: 100vh;
+    float:left;
+    overflow: auto;
+    width: 200px;
+}
+.main{
+   position: relative;
+   background-color: red;
+    height: 100vh;
+    overflow: auto;
+    width: 500px;
+}
+
+

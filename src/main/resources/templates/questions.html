@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
+
+<head>
+    <link rel="stylesheet" href="../static/css/questions.css" th:ref="@{/static/css/questions.css}" type="text/css" media="screen"/>
+    <script>
+		function show() {
+		  
+		}
+		document.getElementById("target2").innerHTML = show();
+	</script>
+</head>
+<h2>Questions</h2>
+
+<div class="leftnav" id="target1">
+<table class="table table-striped">
+    <tbody>
+    <tr th:each="question : ${questionList}">
+    	<button onclick="show();" th:text="${question.toString()}"></button>
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<div class="main" id="target2">
+</div>
+
+</html>

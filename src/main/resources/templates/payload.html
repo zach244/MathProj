@@ -1,9 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
+<head>
+	<style>
+	#target1 {
+	    width: 600px;
+	    height: 60px;
+	}
+	#target2 {
+	    width: 600px;
+	    height: 60px;
+	}
+	#target3 {
+	    width: 600px;
+	    height: 60px;
+	    padding: 5px;
+	}
+	#div1 {
+	    width:600px;
+	    height: 200px;
+	    padding: 10px;
+	    border: 1px solid #aaaaaa;
+	}
+	</style>
+	
+	<script>
+		function allowDrop(ev) {
+		    ev.preventDefault();
+		}
+		
+		function drag(ev) {
+		    ev.dataTransfer.setData("text", ev.target.id);
+		}
+		
+		function drop(ev) {
+		    ev.preventDefault();
+		    var data = ev.dataTransfer.getData("text");
+		    ev.target.appendChild(document.getElementById(data));
+		}
+		
+		function add1(a) { 
+		  for (var i = 0; i < a; i++) {
+			  var img = new Image();
+			  img.src = "http://vignette3.wikia.nocookie.net/lego/images/1/11/Watermelon_Cartoon.png/revision/latest?cb=20120819040222";
+			  img.setAttribute("width", "66");
+			  img.setAttribute("height", "55");
+			  
+		  target1.appendChild(img);
+		  }
+		}
+		
+		function add2(a) { 
+		  for(var i = 0; i != a; i++){
+		  var img = new Image();
+		  img.src = "http://vignette3.wikia.nocookie.net/lego/images/1/11/Watermelon_Cartoon.png/revision/latest?cb=20120819040222";
+		  img.setAttribute("width", "66");
+		  img.setAttribute("height", "55");
+		  
+		  target2.appendChild(img);
+		  }
+		}
+		function sub3(a) { 
+		  for(var i = 0; i != a; i++){
+		  var img = new Image();
+		  img.src = "http://vignette3.wikia.nocookie.net/lego/images/1/11/Watermelon_Cartoon.png/revision/latest?cb=20120819040222";
+		  img.setAttribute("width", "66");
+		  img.setAttribute("height", "55");
+		  
+		  target3.appendChild(img);
+		  }
+		}
+		
+		function sub4(a) { 
+		  for(var i = 0; i != a; i++){
+		  var img = new Image();
+		  img.src = "http://vignette3.wikia.nocookie.net/sims/images/a/aa/Red_x_cross_uncheck_bad.svg/revision/latest?cb=20100801061453";
+		  img.setAttribute("width", "66");
+		  img.setAttribute("height", "55");
+		  
+		  target3.replaceChild(img, target3.childNodes[i]);
+		  }
+		}
+	
+	</script>
+</head>
+
+
 
 <body>
-<h1>
-    Login Succesful
-</h1>
+	<button onclick="add1(8); this.onclick=null;">8</button>
+	<h>+</h>
+	<button onclick="add2(5); this.onclick=null;">5</button>
+	<h>=</h> 
+	<input type="text"></input>
+	
+	<br>
+	<br>
+	<div id="target1" draggable="true" ondragstart="drag(event)"></div>
+	<div id="target2" draggable="true" ondragstart="drag(event)"></div>
+	
+	
+	<br>
+	<button onclick="sub3(8); this.onclick=null;">8</button>
+	<h>-</h>
+	<button onclick="sub4(5); this.onclick=null;">5</button>
+	<h>=</h> 
+	<input type="text"></input>
+	<br>
+	<div id="target3" draggable="true" ondragstart="drag(event)"></div>
+
 </body>
 </html>

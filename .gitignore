@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+/.idea/
+/src/main/resources/application.properties
+!/.idea/workspace.xml
+!/src/main/resources/application.properties
+/target/

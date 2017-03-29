@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import com.example.Repository.QuestionRepository;
 import com.example.domain.Question;
 import com.example.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +15,16 @@ import org.springframework.web.bind.annotation.*;
 
 
 @RestController
+@RequestMapping("/questions/")
 public class QuestionsRestController {
     @Autowired
-    private QuestionService questionService;
+    private QuestionRepository questionRepository;
 
-    @RequestMapping(method= RequestMethod.GET, value="/api/questions/{questionId}",produces = "application/json")
-    @ResponseBody
-    public Question getQuestion(@PathVariable("questionId") Long questionId)
-    {   Question question = questionService.getQuestion(questionId);
-        return question;
+    @RequestMapping(method=RequestMethod.GET,value ="{id}")
+    public Question questionFind(@PathVariable int id)
+    {
+       return questionRepository.findOne(id);
     }
+
+
 }

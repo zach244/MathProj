@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="en">
+
 <head>
     <link rel="stylesheet" href="../static/css/questions.css" th:ref="@{/static/css/questions.css}" type="text/css" media="screen"/>
+
 </head>
 <h2>Questions</h2>
-<div class="leftnav">
-<table class="table table-striped">
-    <tbody>
-    <tr th:each="question : ${questionList}">
-        <td><a href="questions.html"
-               th:href="@{|/tests/${question.getTest().getId()}/${question.id}|}"
-               th:text="${question.toString()}"></a></td>
-    </tr>
-    </tbody>
-</table>
+
+<div class="leftnav" id="target1">
+    <table class="table table-striped">
+        <tbody>
+        <tr th:each="question : ${questionList}">
+            <button th:onclick="'getPropId(\'' + ${question.id} + '\');'" th:text="Question + ${question.id}"></button>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="middle">
+</div>
+<script type="text/javascript">
+
+    function getPropId(inputID)
+    {   alert(inputID);
+//        $.get("http://localhost:8080/questions/"+inputID, function(data, textStatus)
+//        {
+//            alert("Done, with the following status: " + textStatus + ". Here is the response: " + data); Issue with this script
+//        });
+    };
+</script>
+<div class="main" id="target2">
 </div>
 
 </html>

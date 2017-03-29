@@ -51,7 +51,7 @@ public class QuestionService {
         return testQuestions;
     }
 
-    public Question getQuestion(Long questionId) {
+    public Question getQuestion(int questionId) {
         Question question = questionRepository.findById(questionId);
         return question;
     }

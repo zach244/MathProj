@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="740d04e4-ee44-422b-82f8-a715c59caad0" name="Default" comment="commit before presentation.">
+    <list default="true" id="740d04e4-ee44-422b-82f8-a715c59caad0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/example/SecurityexampleApplication.class" afterPath="$PROJECT_DIR$/target/classes/com/example/SecurityexampleApplication.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -860,7 +860,7 @@
       <workItem from="1490836786272" duration="102000" />
       <workItem from="1490838892646" duration="2630000" />
       <workItem from="1490853939683" duration="210000" />
-      <workItem from="1490854172228" duration="51000" />
+      <workItem from="1490854172228" duration="67000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got my branch working again">
       <created>1490130255864</created>
@@ -897,7 +897,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490841515429</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Profile page">
+      <created>1490854235879</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1490854235879</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -933,7 +940,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68575000" />
+    <option name="totallyTimeSpent" value="68591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1037,7 +1044,8 @@
     <MESSAGE value="Most Recent" />
     <MESSAGE value="Changed buttons, was able to pull id from button in javascript, issue with the get request." />
     <MESSAGE value="commit before presentation." />
-    <option name="LAST_COMMIT_MESSAGE" value="commit before presentation." />
+    <MESSAGE value="Added Profile page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Profile page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />

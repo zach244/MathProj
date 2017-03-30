@@ -1,20 +1,52 @@
 <!DOCTYPE html>
 <html xmlns:th="http://thymeleaf.org" lang="en">
 <head>
-    <link rel="stylesheet" href="../static/css/login.css" th:ref="@{/static/css/login.css}" type="text/css" media="screen"/>
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+
+    <style>
+        /*#TODO need to put into its own css and figure out why on login defaults to the css, for another day to be done.*/
+        input[type=text],input[type=password]
+        {
+            width: 15%;
+            padding: 8px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        .usernameLogin
+        {
+            display: block;
+        }
+        .passwordLogin
+        {
+            display:block;
+        }
+        input[type=submit] {
+            padding:5px 15px;
+            background:#ccc;
+            border:0 none;
+            cursor:pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            width : 40px;
+            height : 20px;
+        }
+
+    </style>
 </head>
 <body>
 
 <form id="loginForm" th:action="@{/login}" method="post">
+       <div class="usernameLogin">
         <label for="username" th:text="username"/> <input type="text" id="username" name="username"/>
-
+    </div>
+    <div class="passwordLogin">
         <label for="password" th:text="password"/> <input type="password" id="password" name="password"/>
-
-
+    </div>
+    <div class="buttonLogin">
         <button type="submit" th:text="login">
         </button>
-
+    </div>
 </form>
 </body>
 </html>

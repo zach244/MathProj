@@ -58,19 +58,34 @@ public class SecurityexampleApplication implements CommandLineRunner{
 
 
         Test test = testService.createTest("test 1", date, category);//test creation
-//
-        for(int i = 0; i <= 100; i++) // generate questions
+        Test test2 = testService.createTest("test 2",date,category);
+        Test test3 =testService.createTest("test 3",date,category);
+        Test test4 = testService.createTest("test4",date,category);
+        for(int i = 0; i <= 30; i++) // generate questions
         {
             questionService.createQuestion(i,i + 1,"Please add both the variables together",test);//Need to create Test service\
         }
+        for(int i = 0; i <= 30; i++) // generate questions
+        {
+            questionService.createQuestion(i,i + 1,"Please add both the variables together",test2);//Need to create Test service\
+        }
+        for(int i = 0; i <= 30; i++) // generate questions
+        {
+            questionService.createQuestion(i,i + 1,"Please add both the variables together",test3);//Need to create Test service\
+        }
+        for(int i = 0; i <= 30; i++) // generate questions
+        {
+            questionService.createQuestion(i,i + 1,"Please add both the variables together",test4);//Need to create Test service\
+        }
+
 //        List<Question> testQuestions = questionService.testQuestions(test.getId());
 //        for (Question qu : testQuestions)
 //        {
 //            System.out.print(qu.toString());
 //            System.out.println();
 //        }
-            questionService.createQuestion(56,67,
-                "answer attempt question",test);
+//            questionService.createQuestion(56,67,
+//                "answer attempt question",test);
 //        TestAttempt testAttempt  = testAttemptService.createTestAttempt(user,test); //issue with createTestAttempt
 //        AnswerAttempt answerAttempt = answerAttemptService.createAnswerAttempt(40,
 //                testAttempt,question);

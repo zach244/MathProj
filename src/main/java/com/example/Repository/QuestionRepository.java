@@ -13,7 +13,7 @@ import java.util.List;
  * Finds by foreign key and returns a list of quetions on a test.
  * Finds a certain question by id
  */
-public interface QuestionRepository extends CrudRepository<Question,Long>{
+public interface QuestionRepository extends CrudRepository<Question,Integer>{
    List<Question> findByTestId(int test_id);
-   Question findById(Long id);
+   Question findById(int id);
 }

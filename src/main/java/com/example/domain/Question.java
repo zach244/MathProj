@@ -1,5 +1,7 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,16 +13,22 @@ import java.util.Set;
 public class Question {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     private int var1;
     private int var2;
     private String questionText;
+
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "test_id")
     private Test test;
+
+    @JsonIgnore
     @OneToOne(mappedBy = "question")
     private CorrectAnswer correctAnswer;
+
+    @JsonIgnore
     @OneToMany(mappedBy = "question")
     private Set<AnswerAttempt> answerAttempts = new HashSet<>();
 
@@ -37,11 +45,11 @@ public class Question {
     }
 
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -97,7 +105,15 @@ public class Question {
 
     @Override
     public String toString() {
-        return "Question " + id;
-
+        return "Question{" +
+                "id=" + id +
+                ", var1=" + var1 +
+                ", var2=" + var2 +
+                ", questionText='" + questionText + '\''
+               ;
+    }
+    public String getName(Question question)
+    {
+        return "Question " + question.getId();
     }
 }

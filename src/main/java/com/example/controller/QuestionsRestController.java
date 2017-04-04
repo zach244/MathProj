@@ -26,5 +26,4 @@ public class QuestionsRestController {
        return questionRepository.findOne(id);
     }
 
-
 }

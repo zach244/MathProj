@@ -35,7 +35,7 @@ public class QuestionService {
      */
     @Transactional
     public Question createQuestion(int variable1, int variable2,
-                                   String questionText, Test test) //issue with getting test id
+                                   String questionText, Test test)
     {
         Test localTest = testRepository.findById(test.getId());
         if (localTest == null) {

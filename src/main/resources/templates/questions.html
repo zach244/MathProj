@@ -43,10 +43,13 @@
 
     function getPropId(inputID)
     {   alert(inputID);
-//        $.get("http://localhost:8080/questions/"+inputID, function(data, textStatus)
-//        {
-//            alert("Done, with the following status: " + textStatus + ". Here is the response: " + data); Issue with this script
-//        });
+        $.ajax({
+        type: "GET",
+            url:"localhost:8080/questions/"+inputID,
+        success: function(data){
+        alert(data);
+    }
+    });
     };
 </script>
 <div class="main" id="target2">

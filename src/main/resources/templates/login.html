@@ -5,49 +5,87 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
     <style>
-        /*#TODO need to put into its own css and figure out why on login defaults to the css, for another day to be done.*/
-        input[type=text],input[type=password]
-        {
-            width: 15%;
-            padding: 8px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
+        @import url(http://fonts.googleapis.com/css?family=Roboto:400);
+        body {
+            background-color:#fff;
+            -webkit-font-smoothing: antialiased;
+            font: normal 14px Roboto,arial,sans-serif;
+            text-align: center;
         }
-        .usernameLogin
-        {
-            display: block;
+        .container {
+            padding: 100px;
+            position: fixed;
         }
-        .passwordLogin
-        {
-            display:block;
+        .form-login {
+            background-color: #EDEDED;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 15px;
+            border-color:#d2d2d2;
+            border-width: 5px;
+            box-shadow:0 1px 0 #cfcfcf;
+            text-align: center;
         }
-        input[type=submit] {
-            padding:5px 15px;
-            background:#ccc;
-            border:0 none;
-            cursor:pointer;
-            -webkit-border-radius: 5px;
-            border-radius: 5px;
-            width : 40px;
-            height : 20px;
+        h4 {
+            border:0 solid #fff;
+            border-bottom-width:1px;
+            padding-bottom:10px;
+            text-align: center;
         }
-
+        .form-control {
+            border-radius: 10px;
+        }
+        .wrapper {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 
-<form id="loginForm" th:action="@{/login}" method="post">
-       <div class="usernameLogin">
-        <label for="username" th:text="username"/> <input type="text" id="username" name="username"/>
-    </div>
-    <div class="passwordLogin">
-        <label for="password" th:text="password"/> <input type="password" id="password" name="password"/>
-    </div>
-    <div class="buttonLogin">
-        <button type="submit" th:text="login">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
         </button>
+        <a class="navbar-brand" href="#">Team Gigabyte</a>
     </div>
-</form>
+    <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#about">Tests</a></li>
+        </ul>
+    </div>
+    <!--/.nav-collapse -->
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <div class="form-login">
+                <h4>Login Page</h4>
+                <form id="loginForm" th:action="@{/login}" method="post">
+                    <div class="usernameLogin">
+                        <label for="username" th:text="username"/> <input type="text" id="username" name="username"/>
+                    </div>
+                    <div class="passwordLogin">
+                        <label for="password" th:text="password"/> <input type="password" id="password" name="password"/>
+                    </div>
+                    <div class="buttonLogin">
+                        <button type="submit" th:text="login">
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
-

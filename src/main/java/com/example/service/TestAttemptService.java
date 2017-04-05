@@ -43,13 +43,13 @@ public class TestAttemptService {
      * @return
      */
     @Transactional
-    public TestAttempt createTestAttempt(User user, Test test)
-    {   if(user == null || test == null)
+    public TestAttempt createTestAttempt(Test test)
+    {   if(test == null)
     {
         LOG.info("argument passed can't be null");
     }
        TestAttempt testAttempt = new TestAttempt(
-               userRepository.findByUsername(user.getUsername()),
+               userService.getAuthenticatedUser(),
                testRepository.findById(test.getId()));
         testAttemptRepository.save(testAttempt);
         return testAttempt;
@@ -70,4 +70,5 @@ public class TestAttemptService {
         }
         return testAttempts;
     }
+
 }

@@ -15,28 +15,21 @@ import org.springframework.web.bind.annotation.*;
  * Created by ZACH on 4/4/2017.
  */
 //@RestController
-////@RequestMapping("tests/{testId}/anserAttempt/")
-////public class AttemptRestController {
-////    @Autowired
-////    private AnswerAttemptRepository answerAttemptRepository;
-////
-////    @Autowired
-////    private QuestionRepository  questionRepository;
-////
-////    @Autowired
-////    private AnswerAttemptService answerAttemptService;
-////
-////    @Autowired
-////    private TestRepository testRepository;
-////
-////
-////    @RequestMapping(method= RequestMethod.PUT,value ="{questionId}")
-////    public AnswerAttempt createAnswerAttempt(@RequestParam int answer,@PathVariable int testId, @RequestParam int questionId)
-////    {
-////        Question question = questionRepository.findById(questionId);
-////
-////    }
-////
-////
-////
-////}
+//@RequestMapping("tests/{testId}/anserAttempt/")
+//public class AttemptRestController {
+//    @Autowired
+//    private AnswerAttemptRepository answerAttemptRepository;
+//
+//    @Autowired
+//    private QuestionRepository  questionRepository;
+//
+//    @Autowired
+//    private AnswerAttemptService answerAttemptService;
+//
+//    @Autowired
+//    private TestRepository testRepository;
+//
+//
+//    @RequestMapping(method= RequestMethod.PUT,value ="{questionId}")
+//    public AnswerAttempt createAnswerAttempt(@RequestParam int answer,@PathVariable int testId, @RequestParam int questionId)
+//    {/

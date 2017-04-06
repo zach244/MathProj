@@ -1,6 +1,7 @@
 package com.example.domain;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,8 +13,6 @@ public class TestAttempt {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id")
     private User user;
@@ -22,11 +21,19 @@ public class TestAttempt {
     private Test test;
     @OneToMany(mappedBy = "testAttempt", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<AnswerAttempt> answerAttempts = new HashSet<>();
-
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "TIMESTAMP_FIELD")
+    private java.util.Date timestampField;
 
 
     public TestAttempt() {
 
+    }
+
+    public TestAttempt(User user, Test test, Date timestampField) {
+        this.user = user;
+        this.test = test;
+        this.timestampField = timestampField;
     }
 
     public TestAttempt(User user, Test test) {

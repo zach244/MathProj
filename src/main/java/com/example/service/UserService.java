@@ -55,6 +55,11 @@ public class UserService {
         }
         return localUser;
     }
+
+    /**
+     * Gets the current logged in user and returns their username
+     * @return
+     */
     public User getAuthenticatedUser()
     {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

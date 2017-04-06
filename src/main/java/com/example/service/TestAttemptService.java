@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,50 +24,52 @@ import java.util.List;
 @Transactional
 public class TestAttemptService {
     private static final Logger LOG = LoggerFactory.getLogger(UserService.class);
-
+    @Autowired
+    private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
     @Autowired
     private TestAttemptRepository testAttemptRepository;
-
     @Autowired
     private UserRepository userRepository;
     @Autowired
     private TestRepository testRepository;
-
     @Autowired
     private UserService userService;
 
     /**
-     * Creates new test attempt by using repositories to find user
-     * and test then saves them in object
+     * Creates a new test attempt by receiving a test as a parameter creating a timestamp
+     * gets the authentictad user by calling the .getAutenticatedUser() from userService and then finds the test
+     * in the test repository and creates a new TestAttempt using all off the above information
+     *
      * @param
-     * @param user
+     * @param
      * @param test
      * @return
      */
     @Transactional
-    public TestAttempt createTestAttempt(Test test)
-    {   if(test == null)
-    {
-        LOG.info("argument passed can't be null");
-    }
-       TestAttempt testAttempt = new TestAttempt(
-               userService.getAuthenticatedUser(),
-               testRepository.findById(test.getId()));
+    public TestAttempt createTestAttempt(Test test) {
+        if (test == null) {
+            LOG.info("argument passed can't be null");
+        }
+        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+        TestAttempt testAttempt = new TestAttempt(
+                userService.getAuthenticatedUser(),
+                testRepository.findById(test.getId()), timestamp);
         testAttemptRepository.save(testAttempt);
+        LOG.info(testAttempt.toString());
         return testAttempt;
     }
 
     /**
      * returns a list of all test attempts of a certain test, and a certain user
+     *
      * @param user
      * @param test
      * @return
      */
-    public List<TestAttempt> returnTestAttempts(User user, Test test)
-    {
+    public List<TestAttempt> returnTestAttempts(User user, Test test) {
         List<TestAttempt> testAttempts = new ArrayList<>();
-        for (TestAttempt ta: testAttemptRepository.findByUserIdAndTestId(user.getId(),test.getId()) //this should work
-             ) {
+        for (TestAttempt ta : testAttemptRepository.findByUserIdAndTestId(user.getId(), test.getId()) //returns all test attempts made by a user and a certain test
+                ) {
             testAttempts.add(ta);
         }
         return testAttempts;

@@ -1,5 +1,7 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -9,18 +11,25 @@ import java.util.Set;
  * Created by zach on 3/4/2017.
  */
 @Entity
-public class TestAttempt {
+public class TestAttempt { //issues with circular dependencies
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne(fetch = FetchType.EAGER)
+
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-    @ManyToOne(fetch = FetchType.EAGER)
+
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")
     private Test test;
+
+    @JsonBackReference
     @OneToMany(mappedBy = "testAttempt", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<AnswerAttempt> answerAttempts = new HashSet<>();
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "TIMESTAMP_FIELD")
     private java.util.Date timestampField;

@@ -1,5 +1,7 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 
 /**
@@ -11,10 +13,11 @@ public class AnswerAttempt {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private int userAnswer;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @JsonManagedReference
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "testattempt_id")
     private TestAttempt testAttempt;
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "question_id")
     private Question question;
 

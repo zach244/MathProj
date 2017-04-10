@@ -2,7 +2,6 @@ package com.example.controller;
 
 import com.example.Repository.TestRepository;
 import com.example.domain.Question;
-import com.example.domain.Test;
 import com.example.service.QuestionService;
 import com.example.service.TestAttemptService;
 import com.example.service.UserService;
@@ -54,15 +53,8 @@ public class QuestionController {
             questionsList.add(question);
         }
         model.addAttribute("questionList",questionsList);
-//        LOG.info(userService.getAuthenticatedUser().getUsername()); used to check the authenticated user is correct
-        testAttemptService.createTestAttempt(testRepository.findById(id));
         return "questions";
     }
-//    @RequestMapping(value="/tests/{testid}/{questionid}", method = RequestMethod.GET)
-//    public String questionInfo(@PathVariable("testid")int testid,@PathVariable("questionid") int questionid,Model model)
-//    {
-//
-//        return "questions";
-//    }
+
 
 }

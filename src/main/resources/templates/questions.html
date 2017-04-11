@@ -13,8 +13,8 @@
         function getPropId(inputID) {
             alert("localhost:8080/questions/"+inputID);
             $.get("http://localhost:8080/questions/" + inputID, function (data, status) {
-                var obj = JSON.parse(data); //issue parsing json
-                alert(obj);
+                alert(JSON.stringify(data));
+                document.getElementById("textArea").innerHTML = JSON.stringify(data); // doesn't work
             });
         };
 
@@ -72,8 +72,10 @@
         </tbody>
     </table>
 </div>
-<div class="middle">
-</div>
+
+<textarea id="textArea">
+
+    </textarea>
 
 
 </html>

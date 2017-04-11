@@ -5,12 +5,14 @@
     width: 15%;
     background-color: white;
 }
-.main{
+
+#textArea {
     position: relative;
     background-color: #e6e6e6;
     height: 100vh;
     overflow: auto;
     width: 85%;
+    line-height: inherit;
 }
 button
 {

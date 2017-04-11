@@ -59,7 +59,7 @@ public class SecurityexampleApplication implements CommandLineRunner{
 
         Test test = testService.createTest("test 1", date, category);//test creation
         Test test2 = testService.createTest("test 2",date,category);
-        Test test3 =testService.createTest("test 3",date,category);
+        Test test3 = testService.createTest("test 3",date,category);
         Test test4 = testService.createTest("test4",date,category);
         for(int i = 0; i <= 30; i++) // generate questions
         {

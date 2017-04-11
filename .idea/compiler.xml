@@ -6,12 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MathProject" />
         <module name="securityexample" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MathProject" target="1.8" />
       <module name="securityexample" target="1.8" />
     </bytecodeTargetLevel>
   </component>

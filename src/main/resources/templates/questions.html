@@ -13,7 +13,8 @@
         function getPropId(inputID) {
             alert("localhost:8080/questions/"+inputID);
             $.get("http://localhost:8080/questions/" + inputID, function (data, status) {
-                alert("Data: " + data.toString() + "\nStatus: " + status);
+                var obj = JSON.parse(data); //issue parsing json
+                alert(obj);
             });
         };
 
@@ -26,13 +27,15 @@
                 url: "http://localhost:8080/api/testattempt/" + secondLevelLocation,
                 dataType: 'json',
                 success: function (data, textStatus, jqXHR) {
-                    alert(data);
+                    testattemptID = data.id;
+                    //alert(testattemptID); can use to see testattemptID to see if it works
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
-
+                    alert(textStatus);
+                    alert(errorThrown);
                 }
             });
-        }); //issue, need to pass test id with post call
+        });
     </script>
     <script type="text/javascript">
 

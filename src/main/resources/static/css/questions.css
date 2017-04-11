@@ -6,7 +6,8 @@
     background-color: white;
 }
 
-#textArea {
+.main {
+    padding-top: 50px;
     position: relative;
     background-color: #e6e6e6;
     height: 100vh;

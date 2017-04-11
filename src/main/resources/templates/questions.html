@@ -13,8 +13,8 @@
         function getPropId(inputID) {
             alert("localhost:8080/questions/"+inputID);
             $.get("http://localhost:8080/questions/" + inputID, function (data, status) {
-                alert(JSON.stringify(data));
-                document.getElementById("textArea").innerHTML = JSON.stringify(data); // doesn't work
+                //alert(JSON.stringify(data));
+                document.getElementById("mainDisplay").innerHTML = JSON.stringify(data);// doesn't work
             });
         };
 
@@ -73,9 +73,9 @@
     </table>
 </div>
 
-<textarea id="textArea">
+<div class="main" id="mainDisplay">
 
-    </textarea>
+</div>
 
 
 </html>

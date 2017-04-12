@@ -23,8 +23,7 @@ public class AnswerAttemptRestController {
     @Autowired
     private QuestionRepository questionRepository;
 
-    @Autowired
-    private AnswerAttemptService answerAttemptService;
+
 
     @Autowired
     private TestRepository testRepository;
@@ -32,17 +31,18 @@ public class AnswerAttemptRestController {
     private AnswerAttemptRepository answerAttemptRepository;
     @Autowired
     private TestAttemptRepository testAttemptRepository;
-
+    @Autowired
+    private AnswerAttemptService answerAttemptService;
 
     @RequestMapping(method = RequestMethod.POST)
     public AnswerAttempt createAnswerAttempt(@RequestParam int answer,
                                              @RequestParam int testAttemptId,
                                              @RequestParam int questionId) {
-        AnswerAttempt answerAttempt = new AnswerAttempt(answer,
+
+
+        return answerAttemptService.createAnswerAttempt(answer,
                 testAttemptRepository.findById(testAttemptId),
                 questionRepository.findById(questionId));
-        answerAttemptRepository.save(answerAttempt);
-        return answerAttempt;
     }
 
 }

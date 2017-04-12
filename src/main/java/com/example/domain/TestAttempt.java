@@ -14,7 +14,7 @@ import java.util.Set;
 public class TestAttempt { //issues with circular dependencies
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private int id;
 
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
@@ -50,15 +50,13 @@ public class TestAttempt { //issues with circular dependencies
         this.test = test;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
-
-
 
     public User getUser() {
         return user;

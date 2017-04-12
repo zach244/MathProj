@@ -1,17 +1,16 @@
 package com.example;
 
+import com.example.Repository.CorrectAnswerRepository;
 import com.example.domain.*;
 import com.example.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @SpringBootApplication
@@ -29,6 +28,9 @@ public class SecurityexampleApplication implements CommandLineRunner{
     private TestAttemptService testAttemptService;
     @Autowired
     private AnswerAttemptService answerAttemptService;
+
+    @Autowired
+    private CorrectAnswerRepository correctAnswerRepository;
 
     public static void main(String[] args) {
         SpringApplication.run(SecurityexampleApplication.class, args);
@@ -77,7 +79,7 @@ public class SecurityexampleApplication implements CommandLineRunner{
         {
             questionService.createQuestion(i,i + 1,"Please add both the variables together",test4);//Need to create Test service\
         }
-
+        Question testQuestion = new Question(1, 2, "test", test4);
 //        List<Question> testQuestions = questionService.testQuestions(test.getId());
 //        for (Question qu : testQuestions)
 //        {
@@ -103,7 +105,13 @@ public class SecurityexampleApplication implements CommandLineRunner{
 //        {
 //            System.out.println(te.toString());
 //        }
-        System.out.print(questionService.getQuestion(1).toString());
+        CorrectAnswer correctAnswer = new CorrectAnswer(1, testQuestion);
+        correctAnswerRepository.save(correctAnswer);
+
+        System.out.println(
+                correctAnswerRepository.findByQuestionId(testQuestion.getId()).toString());
+
+
    }
 
 }

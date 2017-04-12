@@ -47,4 +47,13 @@ public class CorrectAnswer {
     public void setQuestion(Question question) {
         this.question = question;
     }
+
+    @Override
+    public String toString() {
+        return "CorrectAnswer{" +
+                "id=" + id +
+                ", correctAnswer=" + correctAnswer +
+                ", question=" + question.toString() +
+                '}';
+    }
 }

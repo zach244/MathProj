@@ -1,9 +1,7 @@
 package com.example.controller;
 
-import com.example.Repository.AnswerAttemptRepository;
 import com.example.Repository.QuestionRepository;
 import com.example.Repository.TestAttemptRepository;
-import com.example.Repository.TestRepository;
 import com.example.domain.AnswerAttempt;
 import com.example.service.AnswerAttemptService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,25 +13,26 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by ZACH on 4/4/2017.
  */
-@RestController
-@RequestMapping("api/anserAttempt/")
-public class AnswerAttemptRestController {
 
+@RestController
+@RequestMapping("api/answerattempt/")
+public class AnswerAttemptRestController {
 
     @Autowired
     private QuestionRepository questionRepository;
-
-
-
-    @Autowired
-    private TestRepository testRepository;
-    @Autowired
-    private AnswerAttemptRepository answerAttemptRepository;
     @Autowired
     private TestAttemptRepository testAttemptRepository;
     @Autowired
     private AnswerAttemptService answerAttemptService;
 
+    /**
+     * Rest method that takes a user answer, testattemptId and questionId to create an answer attempt using a post
+     *
+     * @param answer
+     * @param testAttemptId
+     * @param questionId
+     * @return
+     */
     @RequestMapping(method = RequestMethod.POST)
     public AnswerAttempt createAnswerAttempt(@RequestParam int answer,
                                              @RequestParam int testAttemptId,

@@ -24,10 +24,16 @@ private TestRepository testRepository;
 @Autowired
 private static final Logger LOG = LoggerFactory.getLogger(UserService.class); //need to look at
 
+   /**
+    * Method that takes a Pathvariable of int which should be the TestID Then creates a TestAttempt based
+    * on the Id
+    *
+    * @param testId
+    * @return TestAttempt
+    */
    @RequestMapping(method = RequestMethod.POST, value = "{testId}")
    @ResponseStatus(value= HttpStatus.OK)
-   public TestAttempt createTestAttempt(@PathVariable int testId)
-   {
+   public TestAttempt createTestAttempt(@PathVariable int testId) {
       return testAttemptService.createTestAttempt(testRepository.findById(testId));
    }
 }

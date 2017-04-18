@@ -32,7 +32,7 @@ private static final Logger LOG = LoggerFactory.getLogger(UserService.class); //
     * @return TestAttempt
     */
    @RequestMapping(method = RequestMethod.POST, value = "{testId}")
-   @ResponseStatus(value= HttpStatus.OK)
+   @ResponseStatus(value = HttpStatus.ACCEPTED)
    public TestAttempt createTestAttempt(@PathVariable int testId) {
       return testAttemptService.createTestAttempt(testRepository.findById(testId));
    }

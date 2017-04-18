@@ -50,7 +50,7 @@ public class SecurityexampleApplication implements CommandLineRunner{
             userService.createUser(user,userRoles);
 
         Category category = categoryService.createCategory("Addition");//creates new category of addition
-
+        Category category2 = categoryService.createCategory("Subtraction");
         String date_s = "2011-01-18 00:00:00.0";
         // *** note that it's "yyyy-MM-dd hh:mm:ss" not "yyyy-mm-dd hh:mm:ss"
         SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");

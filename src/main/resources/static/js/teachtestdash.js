@@ -1,7 +1,10 @@
 /**
  * Created by ZACH on 4/18/2017.
  */
+
 // Get the modal
+
+
 var modal = document.getElementById('myModal');
 
 // Get the button that opens the modal

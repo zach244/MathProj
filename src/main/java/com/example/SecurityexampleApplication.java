@@ -59,10 +59,10 @@ public class SecurityexampleApplication implements CommandLineRunner{
         SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
 
 
-        Test test = testService.createTest("test 1", date, category);//test creation
-        Test test2 = testService.createTest("test 2",date,category);
-        Test test3 =testService.createTest("test 3",date,category);
-        Test test4 = testService.createTest("test 4", date, category);
+        Test test = testService.createTest("test 1", category);//test creation
+        Test test2 = testService.createTest("test 2", category);
+        Test test3 = testService.createTest("test 3", category);
+        Test test4 = testService.createTest("test 4", category);
         for(int i = 0; i <= 30; i++) // generate questions
         {
             questionService.createQuestion(i,i + 1,"Please add both the variables together",test);//Need to create Test service\

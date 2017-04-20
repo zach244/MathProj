@@ -17,6 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
             integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
             crossorigin="anonymous"></script>
+    <script src="../static/js/teachtestdash.js"></script>
 </head>
 
 <h2>Tests</h2>
@@ -51,9 +52,8 @@
     <tr>
         <th style="width: 150px;">Id</th>
         <th style="width: 200px;">Name</th>
-        <th>Date</th>
         <th>Category</th>
-        <th>Modify</th>
+        <th>Modify Questions</th>
         <th>Delete</th>
     </tr>
     </thead>
@@ -67,17 +67,17 @@
         <td th:text="${test.name}">Title ...</td>
         <td th:text="${test.getCategory()}"></td>
         <td>
-            <button type="button" class="btn btn-warning">Modify</button>
+            <button type="button" class="btn btn-warning" th:onclick="'getPropId(\'' + ${test.id} + '\');'">Modify
+            </button>
         </td>
         <td>
-            <button type="button" class="btn btn-danger">Delete</button>
+            <button type="button" class="btn btn-danger" th:onclick="'getPropId(\'' + ${test.id} + '\');'">Delete
+            </button>
         </td>
     </tr>
     </tbody>
 </table>
 
-<!-- Trigger/Open The Modal -->
-<button id="myBtn">Open Modal</button>
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <!-- Modal content -->
@@ -97,5 +97,11 @@
     </div>
 </div>
 
+<div id="myModal2" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+
+    </div>
 
 </html>

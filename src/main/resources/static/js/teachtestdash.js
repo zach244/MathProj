@@ -29,3 +29,12 @@ window.onclick = function (event) {
         modal.style.display = "none";
     }
 }
+$("#btnDel").click(function () {
+    alert(this.id);
+});
+function getPropId(inputID) {
+    alert(inputID);
+    $.get("http://localhost:8080/questions/" + inputID, function (data, status) {
+        document.getElementById("mainDisplay").innerHTML = JSON.stringify(data);// doesn't work
+    });
+};

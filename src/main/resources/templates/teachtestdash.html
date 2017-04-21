@@ -67,11 +67,13 @@
         <td th:text="${test.name}">Title ...</td>
         <td th:text="${test.getCategory()}"></td>
         <td>
-            <button type="button" class="btn btn-warning" th:onclick="'getPropId(\'' + ${test.id} + '\');'">Modify
+            <button type="button" class="btn btn-warning" th:onclick="'getPropId(\'' + ${test.id} + '\');'"
+                    data-toggle="modal" data-target="#myModal2">Modify
             </button>
         </td>
         <td>
-            <button type="button" class="btn btn-danger" th:onclick="'getPropId(\'' + ${test.id} + '\');'">Delete
+            <button type="button" class="btn btn-danger" th:onclick="'getPropId(\'' + ${test.id} + '\');'"
+                    data-toggle="modal" data-target="#myModal2">Delete
             </button>
         </td>
     </tr>
@@ -101,7 +103,19 @@
     <!-- Modal content -->
     <div class="modal-content">
         <span class="close">&times;</span>
-
+        <table class="table table-striped" id="modalQuestionTable">
+            <thead>
+            <tr>
+                <th style="width: 150px;">Id</th>
+                <th style="width: 200px;">Name</th>
+                <th>Category</th>
+                <th>Modify Questions</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </div>
-
+</div>
 </html>

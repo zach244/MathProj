@@ -39,7 +39,6 @@
     <tr>
         <th style="width: 150px;">Id</th>
         <th style="width: 200px;">Name</th>
-        <th>Date</th>
         <th>Category</th>
     </tr>
     </thead>
@@ -49,7 +48,6 @@
         <td><a href="questions.html"
                th:href="@{|/tests/${test.id}|}"
                th:text="${test.name}">Title ...</a></td>
-        <td th:text="${test.date}">Text ...</td>
         <td th:text ="${test.getCategory()}"></td>
     </tr>
     </tbody>

@@ -7,14 +7,10 @@
     background-color: white;
 }
 
-<<<<<<< HEAD
 
-.main{
-	padding-top: 50px;
-=======
 .main {
     padding-top: 50px;
->>>>>>> origin/Zachs-functioning
+
     position: relative;
     background-color: #e6e6e6;
     height: 100px;
@@ -45,7 +41,6 @@
     height: 100px;
     overflow: auto;
     width: 85%;
-<<<<<<< HEAD
         background-color: white;
 }
 .numbut
@@ -65,9 +60,7 @@
     display: inline-block;
     padding: 15px 32px;
 	width: 40%;
-=======
-    line-height: inherit;
->>>>>>> origin/Zachs-functioning
+
 }
 button
 {

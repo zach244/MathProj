@@ -9,6 +9,6 @@ import java.util.List;
  * Created by ZACH on 3/10/2017.
  */
 public interface TestAttemptRepository extends CrudRepository<TestAttempt,Long>{
-    TestAttempt findById(Long id);
+    TestAttempt findById(int id);
     List<TestAttempt> findByUserIdAndTestId(Long user_id,int test_id);
 }

@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -32,17 +31,17 @@ public class TestService {
     /**
      *
      * @param name
-     * @param date
+     * @param
      * @param category
      * @return
      */
     @Transactional
-    public Test createTest(String name, Date date, Category category) {
-       if(name == null || date == null || category == null)
+    public Test createTest(String name, Category category) {
+        if (name == null || category == null)
        {
            LOG.info("Passed argument is null");
        }
-        Test newTest = new Test(name,date,categoryRepository.findByName(category.getName()));
+        Test newTest = new Test(name, categoryRepository.findByName(category.getName()));
         testRepository.save(newTest);
         return newTest;
     }

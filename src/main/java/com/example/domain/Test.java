@@ -1,7 +1,8 @@
 package com.example.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public class Test {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
-    private Date date;
+    @JsonManagedReference
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<TestAttempt> testAttempts = new HashSet<>();
     @OneToMany(mappedBy = "test", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -26,9 +27,8 @@ public class Test {
     public Test() {
     }
 
-    public Test(String name, Date date,Category category) {
+    public Test(String name, Category category) {
         this.name = name;
-        this.date = date;
         this.category = category;
     }
 
@@ -64,15 +64,6 @@ public class Test {
         this.name = name;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-
     public Set<Question> getTestQuestions() {
         return testQuestions;
     }
@@ -86,7 +77,6 @@ public class Test {
         return "Test{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", date=" + date +
                 ", category=" + category.toString() +
                 '}';
     }

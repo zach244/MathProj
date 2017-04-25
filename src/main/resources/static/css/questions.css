@@ -1,16 +1,64 @@
 .leftnav{
+	padding-top:50px;
     height: 100vh;
     float:left;
     overflow: auto;
     width: 15%;
     background-color: white;
 }
+
+
 .main{
+	padding-top: 50px;
     position: relative;
     background-color: #e6e6e6;
-    height: 100vh;
+    height: 100px;
     overflow: auto;
     width: 85%;
+        background-color: white;
+}
+
+.sec1{
+	padding-top: 10px;
+    position: relative;
+    height: 100px;
+    overflow: auto;
+    width: 85%;
+        background-color: white;
+}
+.sec2{
+	padding-top: 10px;
+    position: relative;
+    height: 100px;
+    overflow: auto;
+    width: 85%;
+        background-color: white;
+}
+.answer{
+	padding-top: 10px;
+    position: relative;
+    height: 100px;
+    overflow: auto;
+    width: 85%;
+        background-color: white;
+}
+.numbut
+{
+    background-color: red;
+    border: green;
+    color: white;
+    display: inline-block;
+    padding: 15px 32px;
+	width: 40%;
+}
+.submit
+{
+    background-color: purple;
+    border: none;
+    color: white;
+    display: inline-block;
+    padding: 15px 32px;
+	width: 40%;
 }
 button
 {
@@ -26,6 +74,6 @@ button
     margin: 5px;
     border: 1px solid black;
 }
-button:hover{
+.navbutton:hover{
     background-color: #2e6da4;
 }

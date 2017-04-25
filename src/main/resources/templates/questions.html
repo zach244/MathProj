@@ -70,12 +70,13 @@ function getPropId(inputID) {
 	$(submit).addClass('submit');
 	answer.appendChild(submit);
 
-	correctAns = $.ajax({
+	$.ajax({
 	                type: "GET",
 	                url: "http://localhost:8080/api/correctAnswer/" + inputID,
 	                dataType: 'json',
 		                success: function (data, textStatus, jqXHR) {
-		                   //alert(data.correctanswer); //can use to see testattemptID to see if it works
+		                   correctAns = data.correctAnswer;
+		                   alert(data.correctAnswer); //can use to see testattemptID to see if it works
 		                },
 		                error: function (jqXHR, textStatus, errorThrown) {
 		                    //alert(textStatus);
@@ -86,7 +87,7 @@ function getPropId(inputID) {
 	
 				        $(submit).click(function compare() {
 							answerSubmit = input.value;
-							alert(answerSubmit);
+							//alert(answerSubmit);
 
 				            $.ajax(
 				            {	type: "POST",
@@ -95,8 +96,8 @@ function getPropId(inputID) {
 						                       testAttemptId : testattemptID,
 						                       questionId : inputID},
 						                dataType: 'json',
-						                success: function () {
-						                	alert(correctAns.getCorrectAnswer());
+						                success: function (data) {
+						                	//alert(data.getCorrectAnswer());
 						                    //testattemptID = data.id;
 						                   	//alert(testattemptID); can use to see testattemptID to see if it works
 						                },
@@ -111,6 +112,10 @@ function getPropId(inputID) {
 			            	if(correctAns == answerSubmit)
 			            	{
 			            	alert("Success!");
+			            	}
+			            	else
+			            	{
+			            	alert("Wrong answer!");
 			            	}
         				});
 	

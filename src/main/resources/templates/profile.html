@@ -48,6 +48,8 @@
     </div>
 </nav>
 
+<p th:text="${user}"></p>
+
 <div class="main" id="mainDisplay">
 <br/>
   <center>
@@ -69,7 +71,7 @@
 				document.getElementById('displaySpan').innerHTML='High Score : '+ highScore;
 			}
 
-			var info = "name";
+			var info = /*[[${user}]]*/; 'USER';
 	    function displayInfo()
 			{
 				document.getElementById('displaySpan').innerHTML='Name : '+ info;

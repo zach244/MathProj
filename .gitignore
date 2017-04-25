@@ -9,4 +9,16 @@
 .metadata/**
 target/**
 *~*
+<<<<<<< HEAD
+>>>>>>> origin/Zachs-functioning
+=======
+*.class
+
+target/classes/application.properties
+
+src/main/resources/application.properties
+
+target/classes/application.properties
+
+target/classes/application.properties
 >>>>>>> origin/Zachs-functioning

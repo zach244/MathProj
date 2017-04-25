@@ -29,11 +29,7 @@ public class CorrectAnswerService {
             LOG.info("There is already a correct answer specified to this question, please delete or" +
                     "alter this correct answer");
         } else {
-<<<<<<< HEAD
             correctAnswer = new CorrectAnswer(answer,questionRepository.findById(question.getId()));
-=======
-            correctAnswer = new CorrectAnswer(answer, question);
->>>>>>> origin/Zachs-functioning
             correctAnswerRepository.save(correctAnswer);
         }
         return correctAnswer;

@@ -3,4 +3,10 @@
 /src/main/resources/application.properties
 !/.idea/workspace.xml
 !/src/main/resources/application.properties
+<<<<<<< HEAD
 /target/
+=======
+.metadata/**
+target/**
+*~*
+>>>>>>> origin/Zachs-functioning

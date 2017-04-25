@@ -1,122 +1,93 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org" lang="en">
 
-<!--<head>-->
-    <!--<title>Profile Page</title>-->
-    <!--<meta charset="utf-8">-->
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
-    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
-    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
-    <!--<style>-->
-        <!--.buttonSize {-->
-            <!--width: 100px !important;-->
-        <!--}-->
-        <!--.userinfo {-->
-            <!--margin: 0 auto;-->
-            <!--color: #5a7391;-->
-            <!--font-size: 16px;-->
-            <!--font-weight: 600;-->
-            <!--margin-bottom: 7px;-->
-            <!--text-align: center;-->
-        <!--}-->
+<head>
+    <!--<meta name="_csrf" th:content="${_csrf.token}"/>-->
+    <!--&lt;!&ndash; default header name is X-CSRF-TOKEN &ndash;&gt;-->
+    <!--<meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+    <style>
+.buttonSize {
+    width: 100px !important;
+}
+.userinfo {
+  margin: 0 auto;
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+  text-align: center;
+}
 
-    <!--</style>-->
-<!--</head>-->
+</style>
+</head>
 
-<!--<body>-->
+<h2>profile page</h2>
 
-<!--<div class="container">-->
-    <!--<center>-->
-        <!--<h2>My Profile</h2>-->
-    <!--</center>-->
-    <!--<br>-->
-    <!--<div class="text-center">-->
-        <!--<button type="button" id = "Info" class="btn btn-primary buttonSize" href = #info data-toggle = "tab">-->
-            <!--<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Info-->
-        <!--</button>-->
-        <!--<button type="button" id = "Highscore" class="btn btn-danger buttonSize" href = #highscore data-toggle = "tab">-->
-            <!--<span class="glyphicon glyphicon-flag" aria-hidden="true"></span> Highscore-->
-        <!--</button>-->
-        <!--<button type="button" id = "Setting" class="btn btn-warning buttonSize" href = #setting data-toggle = "tab">-->
-            <!--<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Setting-->
-        <!--</button>-->
-    <!--</div>-->
-<!--</div>-->
-
-
-<!--<div class="tab-content">-->
-    <!--<div class="tab-pane fade in " id="info">-->
-        <!--<div class ="userinfo">-->
-            <!--<h3> Name: Serena Yang</h3>-->
-            <!--<h3> Grade: 2nd Grade</h3>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="tab-pane fade in" id="highscore">-->
-        <!--<div class="container">-->
-            <!--<center>-->
-                <!--<h2>Top 3</h2>-->
-                <!--<table class="table table-striped">-->
-                    <!--<thead>-->
-                    <!--<tr>-->
-                        <!--<th>General</th>-->
-                        <!--<th>Addition</th>-->
-                        <!--<th>Subtraction</th>-->
-                        <!--<th>Digit Placement</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <!--<tbody>-->
-                    <!--<tr class="danger">-->
-                        <!--<td>10</td>-->
-                        <!--<td>10</td>-->
-                        <!--<td>9</td>-->
-                        <!--<td>9</td>-->
-                    <!--</tr>-->
-                    <!--<tr class="info">-->
-                        <!--<td>11</td>-->
-                        <!--<td>9</td>-->
-                        <!--<td>8</td>-->
-                        <!--<td>11</td>-->
-                    <!--</tr>-->
-                    <!--<tr class="warning">-->
-                        <!--<td>8</td>-->
-                        <!--<td>7</td>-->
-                        <!--<td>8</td>-->
-                        <!--<td>8</td>-->
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
-            <!--</center>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class="tab-pane fade in" id="setting">-->
-        <!--<h3>this is setting</h3>-->
-    <!--</div>-->
-<!--</div>-->
-
-
-
-
-
-
-
-
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 <!--<script>-->
-    <!--$(document).ready(function() {-->
-        <!--$(".btn-pref .btn").click(function () {-->
-            <!--$(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");-->
-            <!--$(this).removeClass("btn-default").addClass("btn-primary");-->
-        <!--});-->
-    <!--});-->
+    <!--document.onload = alert('meta[name="_csrf"]');-->
 <!--</script>-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Team Gigabyte</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/tests/" th:href="@{/tests/}">Home</a></li>
+                <li class="active"><a href="/profile/" th:href="@{/profile/}">My Profile</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
 
-<!--</body>-->
+<div class="main" id="mainDisplay">
+<br/>
+  <center>
+  <h2>My Profile</h2>
+  </center>
+		<br/>
+		<div class="text-center">
+			<button type="button" id="highScore"  class="btn btn-primary buttonSize" onclick="displayHighScore();">High Score</button>
+			<button type="button" id="Info" class="btn btn-danger buttonSize"  onclick="displayInfo();">Information</button>
+			<button type="button" id="Setting"  class="btn btn-warning buttonSize"  onclick="displaySetting();">Setting</button>
+			
+		<br/><br/>
+		<span id="displaySpan"></span>
+		</div>
+		<script th:inline="javascript">
+			var highScore = "10";
+		function displayHighScore()
+			{
+				document.getElementById('displaySpan').innerHTML='High Score : '+ highScore;
+			}
+
+			var info = "name";
+	    function displayInfo()
+			{
+				document.getElementById('displaySpan').innerHTML='Name : '+ info;
+			}
+			var setting = "this is setting";
+	    function displaySetting()
+			{
+				document.getElementById('displaySpan').innerHTML='Setting : '+ setting;
+			}
+
+
+		</script>
+
+
+</div>
 
 
 
-<!--<center>-->
-    <!--<strong>Gigabyte Math Project</strong>-->
-<!--</center>-->
-<!--<br>-->
-<!--<br>-->
-<!--</html>-->
+
+
+</html>

@@ -11,13 +11,16 @@ import org.springframework.web.bind.annotation.*;
  */
 @RestController
 @RequestMapping("/api/correctAnswer/")
+
 public class CorrectAnswerRestController {
     @Autowired
     private CorrectAnswerRepository correctAnswerRepository;
 
+
     @RequestMapping(method = RequestMethod.GET,value ="{questionId}")
     @ResponseStatus(value = HttpStatus.OK)
     public CorrectAnswer getCorrectAnswer(@PathVariable int questionId) {
+
         return correctAnswerRepository.findByQuestionId(questionId);
     }
 

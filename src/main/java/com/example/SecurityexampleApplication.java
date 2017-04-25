@@ -32,8 +32,10 @@ public class SecurityexampleApplication implements CommandLineRunner{
     @Autowired
     private CorrectAnswerRepository correctAnswerRepository;
 
+
     @Autowired
     private CorrectAnswerService correctAnswerService;
+
     public static void main(String[] args) {
         SpringApplication.run(SecurityexampleApplication.class, args);
 
@@ -87,6 +89,7 @@ public class SecurityexampleApplication implements CommandLineRunner{
         Question testQuestion2 = questionService.createQuestion(1,2,"Please add both the variables together",test4);//Need to create Test service\
 
         CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(3, testQuestion2);
+
 //        List<Question> testQuestions = questionService.testQuestions(test.getId());
 //        for (Question qu : testQuestions)
 //        {
@@ -112,10 +115,12 @@ public class SecurityexampleApplication implements CommandLineRunner{
 //        {
 //            System.out.println(te.toString());
 //        }
+
         
        //correctAnswerRepository.save(correctAnswer);
 
         //System.out.println(correctAnswerRepository.findByQuestionId(testQuestion.getId()).toString());
+
 
 
    }

@@ -13,6 +13,7 @@ var btn = document.getElementById("myBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
+var table = document.getElementsByClassName("modalQuestionTable");
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
     modal.style.display = "block";
@@ -37,14 +38,18 @@ function getPropId(inputID) {
     alert(inputID);
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080//tests/" + inputID,
+        url: "http://localhost:8080/questions/fAll/" + inputID,
         dataType: 'json',
-        success: function (response) {
-            var trHTML = '';
-            $.each(response, function (i, item) {
-                trHTML += '<tr><td>' + item.var1 + '</td><td>' + item.var2 + '</td><td>' + item.questionText + '</td></tr>';
-            });
-            $("#modalQuestionTable").append(trHTML);
+        success: function (json) {
+            var tr;
+            for (var i = 0; i < json.length; i++) {
+                tr = $('<tr/>');
+                tr.append("<td>" + json[i].id + "</td>");
+                tr.append("<td>" + json[i].var1 + "</td>");
+                tr.append("<td>" + json[i].var2 + "</td>");
+                tr.append("<td>" + json[i].questionText + "</td>");
+                $(table).append(tr);
+            }
         },
         error: function (jqXHR, textStatus, errorThrown) {
             alert(textStatus);

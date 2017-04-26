@@ -56,4 +56,11 @@ public class TestTeacherDashController {
         }
         return testService.createTest(name, categoryRepository.findByName(categoryName));
     }
+
+    @RequestMapping(value = "/teachtestdash/delete/", method = RequestMethod.POST)
+    @ResponseStatus(value = HttpStatus.ACCEPTED)
+    public void deleteTest(@RequestParam int testId) throws ParseException {
+        Test test = testRepository.findById(testId);
+        testService.deleteTest(test);
+    }
 }

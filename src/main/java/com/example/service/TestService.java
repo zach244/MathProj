@@ -45,14 +45,20 @@ public class TestService {
         testRepository.save(newTest);
         return newTest;
     }
-    public Set<Test> findAll()
-    {
+
+    @Transactional
+    public Set<Test> findAll() {
         Set<Test> findAllTests = new HashSet<>();
         for (Test test : testRepository.findAll()
-             ) { findAllTests.add(test);
+                ) { findAllTests.add(test);
 
         }
         return findAllTests;
+    }
+
+    @Transactional
+    public void deleteTest(Test test) {
+        testRepository.delete(test);
     }
 
 }

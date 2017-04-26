@@ -29,7 +29,6 @@ public class TestService {
     private UserRepository userRepository;
 
     /**
-     *
      * @param name
      * @param
      * @param category
@@ -37,28 +36,37 @@ public class TestService {
      */
     @Transactional
     public Test createTest(String name, Category category) {
-        if (name == null || category == null)
-       {
-           LOG.info("Passed argument is null");
-       }
+        if (name == null || category == null) {
+            LOG.info("Passed argument is null");
+        }
         Test newTest = new Test(name, categoryRepository.findByName(category.getName()));
         testRepository.save(newTest);
         return newTest;
     }
 
+    /**
+     * finds all tests and returns them as a Set
+     *
+     * @return
+     */
     @Transactional
     public Set<Test> findAll() {
         Set<Test> findAllTests = new HashSet<>();
         for (Test test : testRepository.findAll()
-                ) { findAllTests.add(test);
+                ) {
+            findAllTests.add(test);
 
         }
         return findAllTests;
     }
 
+    /**
+     * finds a tests and delets it using its id
+     * @param id
+     */
     @Transactional
-    public void deleteTest(Test test) {
-        testRepository.delete(test);
+    public void deleteTest(int id) {
+        testRepository.delete(testRepository.findById(id));
     }
 
 }

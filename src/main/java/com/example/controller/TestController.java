@@ -25,12 +25,18 @@ public class TestController {
     @Autowired
     private TestRepository testRepository;
 
+    /**
+     * Returns a model that has all the tests from the database added to it called testsAll
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/tests", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String registration(Model model) {
-       List<Test> testsAll = new LinkedList<>();
+        List<Test> testsAll = new LinkedList<>();
         for (Test test : testRepository.findAll()
-             ) {
+                ) {
             testsAll.add(test);
         }
         model.addAttribute("testsAll",testsAll);

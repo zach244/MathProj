@@ -28,6 +28,7 @@ public class AnswerAttemptService {
 
     /**
      * Creates new answer attempt with finding test attempt id and question id
+     *
      * @param userAnswer
      * @param testAttempt
      * @param question
@@ -35,17 +36,15 @@ public class AnswerAttemptService {
      */
     @Transactional
     public AnswerAttempt createAnswerAttempt(int userAnswer, TestAttempt testAttempt,
-                                             Question question)
-    {
-        if(testAttempt == null || question == null)
-        {
+                                             Question question) {
+        if (testAttempt == null || question == null) {
             LOG.info("argument passed can't be null");
         }
         AnswerAttempt answerAttempt = new AnswerAttempt(userAnswer,
-               testAttemptRepository.findById(testAttempt.getId()),
+                testAttemptRepository.findById(testAttempt.getId()),
                 questionRepository.findById(question.getId()));
         answerAttemptRepository.save(answerAttempt);
-            return answerAttempt;
+        return answerAttempt;
     }
 
 }

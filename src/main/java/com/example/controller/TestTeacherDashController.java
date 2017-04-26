@@ -32,6 +32,12 @@ public class TestTeacherDashController {
     @Autowired
     private CategoryService categoryService;
 
+    /**
+     * returns all the tests and adds them to a model and returns them testsAll
+     *
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/teachtestdash/", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public String registration(Model model) {
@@ -45,6 +51,14 @@ public class TestTeacherDashController {
         return "teachtestdash";
     }
 
+    /**
+     * Creates a new test and requires the Request Parameters. If the category can't be found in database
+     * will create a new category and then create the test under that category
+     * @param name
+     * @param categoryName
+     * @return
+     * @throws ParseException
+     */
     @RequestMapping(value = "/teachtestdash/", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.ACCEPTED)
     public Test createTest(@RequestParam String name,
@@ -57,10 +71,15 @@ public class TestTeacherDashController {
         return testService.createTest(name, categoryRepository.findByName(categoryName));
     }
 
+    /**
+     * controller that requests param of testId then delets the corresponding test using
+     * the service
+     * @param testId
+     * @throws ParseException
+     */
     @RequestMapping(value = "/teachtestdash/delete/", method = RequestMethod.POST)
     @ResponseStatus(value = HttpStatus.ACCEPTED)
     public void deleteTest(@RequestParam int testId) throws ParseException {
-        Test test = testRepository.findById(testId);
-        testService.deleteTest(test);
+        testService.deleteTest(testId);
     }
 }

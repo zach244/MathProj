@@ -31,12 +31,12 @@ public class CategoryService {
     public Category createCategory(String name) {
         Category newCategory = categoryRepository.findByName(name);
         Category category = new Category(name);
-        if(name == null) {
+        if (name == null) {
             LOG.info("Category can't be null");
         }
-        if(newCategory != null) {
+        if (newCategory != null) {
             LOG.info("Category has already been created");
-        } else{
+        } else {
 
             categoryRepository.save(category);
         }

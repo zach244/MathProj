@@ -35,8 +35,7 @@ public class QuestionService {
      */
     @Transactional
     public Question createQuestion(int variable1, int variable2,
-                                   String questionText, Test test)
-    {
+                                   String questionText, Test test) {
         Test localTest = testRepository.findById(test.getId());
         if (localTest == null) {
             LOG.info("localTest is null");
@@ -46,21 +45,44 @@ public class QuestionService {
         return localQuestion;
     }
 
+    /**
+     * returns all the questions in a list based on a testId using question repository
+     *
+     * @param testId
+     * @return
+     */
     public List<Question> testQuestions(int testId) {
         List<Question> testQuestions = questionRepository.findByTestId(testId);
         return testQuestions;
     }
 
+    /**
+     * gets a certain question based on its id
+     * @param questionId
+     * @return
+     */
     public Question getQuestion(int questionId) {
         Question question = questionRepository.findById(questionId);
         return question;
     }
 
+    /**
+     * deletes question based on its id
+     * @param id
+     */
     public void deleteQuestion(int id) {
         Question question = questionRepository.findById(id);
         questionRepository.delete(question);
     }
 
+    /**
+     * attempt at modifying question. Currently not working, takes and checks all the variables and modifies the question
+     * based on the arguments passed
+     * @param id
+     * @param variable1
+     * @param variable2
+     * @param questionText
+     */
     public void modifyQuestion(int id, int variable1, int variable2, String questionText) {
 
         if (questionRepository.findById(id) == null) {

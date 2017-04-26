@@ -22,6 +22,14 @@ public class CorrectAnswerService {
     @Autowired
     private CorrectAnswerRepository correctAnswerRepository;
 
+    /**
+     * checks to see whether there is a correct answer for a question already, if so it displayis in the log
+     * if not it creates a new correct answer.
+     *
+     * @param answer
+     * @param question
+     * @return
+     */
     @Transactional
     public CorrectAnswer createCorrectAnswer(int answer, Question question) {
         CorrectAnswer correctAnswer = correctAnswerRepository.findByQuestionId(question.getId());

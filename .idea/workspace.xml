@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2203850e-fd65-4556-9d42-9da43d2de7f4" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/QuestionsRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/QuestionsRestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/controller/TestTeacherDashController.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/controller/TestTeacherDashController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/example/service/TestService.java" afterPath="$PROJECT_DIR$/src/main/java/com/example/service/TestService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/js/teachtestdash.js" afterPath="$PROJECT_DIR$/src/main/resources/static/js/teachtestdash.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +28,8 @@
           <file leaf-file-name="teachtestdash.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/templates/teachtestdash.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="280">
-                  <caret line="105" column="47" lean-forward="true" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="65" />
+                <state relative-caret-position="1785">
+                  <caret line="105" column="47" lean-forward="false" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="65" />
                   <folding>
                     <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#html#0;n#!!top" expanded="true" />
@@ -49,8 +45,8 @@
           <file leaf-file-name="TestTeacherDashController.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/TestTeacherDashController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="362">
-                  <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="51" />
+                <state relative-caret-position="389">
+                  <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -59,11 +55,11 @@
           <file leaf-file-name="TestService.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/service/TestService.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="529">
+                <state relative-caret-position="799">
                   <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
                   <folding>
-                    <element signature="e#1627#1628#0" expanded="true" />
-                    <element signature="e#1670#1671#0" expanded="true" />
+                    <element signature="e#1624#1625#0" expanded="true" />
+                    <element signature="e#1667#1668#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -72,7 +68,7 @@
           <file leaf-file-name="QuestionController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/QuestionController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="493">
+                <state relative-caret-position="391">
                   <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
                   <folding />
                 </state>
@@ -82,11 +78,9 @@
           <file leaf-file-name="QuestionsRestController.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/QuestionsRestController.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+                <state relative-caret-position="442">
+                  <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
                   <folding>
-                    <element signature="e#764#765#0" expanded="true" />
-                    <element signature="e#816#817#0" expanded="true" />
                     <element signature="e#1005#1006#0" expanded="true" />
                     <element signature="e#1065#1066#0" expanded="true" />
                   </folding>
@@ -97,8 +91,8 @@
           <file leaf-file-name="teachtestdash.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/teachtestdash.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+                <state relative-caret-position="731">
+                  <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -108,7 +102,7 @@
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/TestController.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="238">
-                  <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+                  <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -119,7 +113,39 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="136">
                   <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-                  <folding />
+                  <folding>
+                    <element signature="imports" expanded="false" />
+                    <element signature="e#977#978#0" expanded="false" />
+                    <element signature="e#1002#1003#0" expanded="false" />
+                    <element signature="e#1035#1036#0" expanded="false" />
+                    <element signature="e#1063#1064#0" expanded="false" />
+                    <element signature="e#1093#1094#0" expanded="false" />
+                    <element signature="e#1120#1121#0" expanded="false" />
+                    <element signature="e#1157#1158#0" expanded="false" />
+                    <element signature="e#1189#1190#0" expanded="false" />
+                    <element signature="e#1217#1218#0" expanded="false" />
+                    <element signature="e#1244#1245#0" expanded="false" />
+                    <element signature="e#1281#1282#0" expanded="false" />
+                    <element signature="e#1313#1314#0" expanded="false" />
+                    <element signature="e#1352#1353#0" expanded="false" />
+                    <element signature="e#1387#1388#0" expanded="false" />
+                    <element signature="e#1443#1444#0" expanded="false" />
+                    <element signature="e#1491#1492#0" expanded="false" />
+                    <element signature="e#1520#1521#0" expanded="false" />
+                    <element signature="e#1547#1548#0" expanded="false" />
+                    <element signature="e#1585#1586#0" expanded="false" />
+                    <element signature="e#1617#1618#0" expanded="false" />
+                    <element signature="e#1664#1665#0" expanded="false" />
+                    <element signature="e#1700#1701#0" expanded="false" />
+                    <element signature="e#1765#1766#0" expanded="false" />
+                    <element signature="e#1815#1816#0" expanded="false" />
+                    <element signature="e#1868#1869#0" expanded="false" />
+                    <element signature="e#1905#1906#0" expanded="false" />
+                    <element signature="e#1977#1978#0" expanded="false" />
+                    <element signature="e#2029#2030#0" expanded="false" />
+                    <element signature="e#2334#2335#0" expanded="false" />
+                    <element signature="e#2387#2388#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -127,11 +153,11 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="teachtestdash.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/teachtestdash.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="425">
+                <state relative-caret-position="615">
                   <caret line="50" column="23" lean-forward="false" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
                   <folding />
                 </state>
@@ -283,10 +309,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="1910" />
     <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -303,6 +328,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -531,9 +557,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1097,7 +1122,8 @@
       <workItem from="1492721628464" duration="727000" />
       <workItem from="1492722417485" duration="7000" />
       <workItem from="1492726646301" duration="6208000" />
-      <workItem from="1493175349635" duration="2279000" />
+      <workItem from="1493175349635" duration="2316000" />
+      <workItem from="1493178704112" duration="3064000" />
     </task>
     <task id="LOCAL-00001" summary="Finally got my branch working again">
       <created>1490130255864</created>
@@ -1211,7 +1237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492730807856</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Wrote delete method for test must write modify then figure out questions.">
+      <created>1493177652461</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1493177652461</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1247,10 +1280,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="146218000" />
+    <option name="totallyTimeSpent" value="149319000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1910" y="0" width="1936" height="1047" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1271,7 +1304,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.106723584" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1329,7 +1362,8 @@
     <MESSAGE value="Need to find bootstrap JS refrence and npm.js to get modal working." />
     <MESSAGE value="got module working but the exit button to close" />
     <MESSAGE value="Can now onclick pull button id for a question get, but need to figurre out a way to display them in modal." />
-    <option name="LAST_COMMIT_MESSAGE" value="Can now onclick pull button id for a question get, but need to figurre out a way to display them in modal." />
+    <MESSAGE value="Wrote delete method for test must write modify then figure out questions." />
+    <option name="LAST_COMMIT_MESSAGE" value="Wrote delete method for test must write modify then figure out questions." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1664,8 +1698,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/teachtestdash.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="105" column="47" lean-forward="true" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="65" />
+        <state relative-caret-position="1785">
+          <caret line="105" column="47" lean-forward="false" selection-start-line="105" selection-start-column="47" selection-end-line="105" selection-end-column="65" />
           <folding>
             <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#html#0;n#!!top" expanded="true" />
@@ -1681,13 +1715,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#977#978#0" expanded="false" />
+            <element signature="e#1002#1003#0" expanded="false" />
+            <element signature="e#1035#1036#0" expanded="false" />
+            <element signature="e#1063#1064#0" expanded="false" />
+            <element signature="e#1093#1094#0" expanded="false" />
+            <element signature="e#1120#1121#0" expanded="false" />
+            <element signature="e#1157#1158#0" expanded="false" />
+            <element signature="e#1189#1190#0" expanded="false" />
+            <element signature="e#1217#1218#0" expanded="false" />
+            <element signature="e#1244#1245#0" expanded="false" />
+            <element signature="e#1281#1282#0" expanded="false" />
+            <element signature="e#1313#1314#0" expanded="false" />
+            <element signature="e#1352#1353#0" expanded="false" />
+            <element signature="e#1387#1388#0" expanded="false" />
+            <element signature="e#1443#1444#0" expanded="false" />
+            <element signature="e#1491#1492#0" expanded="false" />
+            <element signature="e#1520#1521#0" expanded="false" />
+            <element signature="e#1547#1548#0" expanded="false" />
+            <element signature="e#1585#1586#0" expanded="false" />
+            <element signature="e#1617#1618#0" expanded="false" />
+            <element signature="e#1664#1665#0" expanded="false" />
+            <element signature="e#1700#1701#0" expanded="false" />
+            <element signature="e#1765#1766#0" expanded="false" />
+            <element signature="e#1815#1816#0" expanded="false" />
+            <element signature="e#1868#1869#0" expanded="false" />
+            <element signature="e#1905#1906#0" expanded="false" />
+            <element signature="e#1977#1978#0" expanded="false" />
+            <element signature="e#2029#2030#0" expanded="false" />
+            <element signature="e#2334#2335#0" expanded="false" />
+            <element signature="e#2387#2388#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/teachtestdash.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/service/TestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
+          <folding>
+            <element signature="e#1624#1625#0" expanded="true" />
+            <element signature="e#1667#1668#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/QuestionController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
+        <state relative-caret-position="391">
           <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
           <folding />
         </state>
@@ -1695,48 +1788,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/QuestionsRestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="37" column="53" lean-forward="false" selection-start-line="37" selection-start-column="53" selection-end-line="37" selection-end-column="53" />
+        <state relative-caret-position="442">
+          <caret line="36" column="53" lean-forward="false" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
           <folding>
-            <element signature="e#764#765#0" expanded="true" />
-            <element signature="e#816#817#0" expanded="true" />
             <element signature="e#1005#1006#0" expanded="true" />
             <element signature="e#1065#1066#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/teachtestdash.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="43" column="19" lean-forward="true" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/service/TestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="60" column="36" lean-forward="false" selection-start-line="60" selection-start-column="36" selection-end-line="60" selection-end-column="36" />
-          <folding>
-            <element signature="e#1627#1628#0" expanded="true" />
-            <element signature="e#1670#1671#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/controller/TestTeacherDashController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="59" column="29" lean-forward="true" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="51" />
+        <state relative-caret-position="389">
+          <caret line="47" column="44" lean-forward="true" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="44" />
           <folding />
         </state>
       </provider>

@@ -55,4 +55,43 @@ public class QuestionService {
         Question question = questionRepository.findById(questionId);
         return question;
     }
+
+    public void deleteQuestion(int id) {
+        Question question = questionRepository.findById(id);
+        questionRepository.delete(question);
+    }
+
+    public void modifyQuestion(int id, int variable1, int variable2, String questionText) {
+        Question question = questionRepository.findById(id);
+        if (questionRepository.findById(id) == null) {
+            LOG.info("question hasn't been created");
+        } else if (variable1 != 0 && variable2 == 0 && questionText == null) {
+            question.setVar1(variable1);
+            questionRepository.save(question);
+        } else if (variable1 == 0 && variable2 != 0 && questionText == null) {
+            question.setVar2(variable2);
+            questionRepository.save(question);
+        } else if (variable1 == 0 && variable2 == 0 && questionText != null) {
+            question.setQuestionText(questionText);
+            questionRepository.save(question);
+        } else if (variable1 != 0 && variable2 != 0 && questionText == null) {
+            question.setVar1(variable1);
+            question.setVar2(variable2);
+            questionRepository.save(question);
+        } else if (variable1 != 0 && variable2 == 0 && questionText != null) {
+            question.setVar1(variable1);
+            question.setQuestionText(questionText);
+            questionRepository.save(question);
+        } else if (variable1 == 0 && variable2 != 0 && questionText != null) {
+            question.setVar2(variable2);
+            question.setQuestionText(questionText);
+            questionRepository.save(question);
+        } else {
+            question.setVar1(variable1);
+            question.setVar2(variable2);
+            question.setQuestionText(questionText);
+            questionRepository.save(question);
+        }
+    }
+
 }

@@ -1,5 +1,4 @@
 package com.example;
-
 import com.example.Repository.CorrectAnswerRepository;
 import com.example.domain.*;
 import com.example.service.*;
@@ -32,6 +31,10 @@ public class SecurityexampleApplication implements CommandLineRunner{
     @Autowired
     private CorrectAnswerRepository correctAnswerRepository;
 
+
+    @Autowired
+    private CorrectAnswerService correctAnswerService;
+
     public static void main(String[] args) {
         SpringApplication.run(SecurityexampleApplication.class, args);
 
@@ -59,27 +62,54 @@ public class SecurityexampleApplication implements CommandLineRunner{
         SimpleDateFormat dt1 = new SimpleDateFormat("yyyy-MM-dd");
 
 
-        Test test = testService.createTest("test 1", category);//test creation
-        Test test2 = testService.createTest("test 2", category);
+        Test test1 = testService.createTest("test 1", category);//test creation
+        Test test2 = testService.createTest("test 2", category2);
         Test test3 = testService.createTest("test 3", category);
-        Test test4 = testService.createTest("test 4", category);
-        for(int i = 0; i <= 30; i++) // generate questions
+        Test test4 = testService.createTest("test 4", category2);
+        int var1 = 0;
+        int var2 = 0;
+
+        for (int i = 1; i <= 10; i++) // generate questions
         {
-            questionService.createQuestion(i,i + 1,"Please add both the variables together",test);//Need to create Test service\
+            var1 = (int) Math.ceil(10 - 10 * Math.random());
+            var2 = (int) Math.ceil(10 - 10 * Math.random());
+
+            Question testQuestion = questionService.createQuestion(var1, var2, "addition", test1);
+            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 + var2, testQuestion);
         }
-        for(int i = 0; i <= 30; i++) // generate questions
+        for (int i = 1; i <= 10; i++) // generate questions
         {
-            questionService.createQuestion(i,i + 1,"Please add both the variables together",test2);//Need to create Test service\
+            while (var1 <= var2) {
+                var1 = (int) Math.ceil(10 - 10 * Math.random());
+                var2 = (int) Math.ceil(10 - 10 * Math.random());
+            }
+            Question testQuestion = questionService.createQuestion(var1, var2, "subtraction", test2);
+            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 - var2, testQuestion);
         }
-        for(int i = 0; i <= 30; i++) // generate questions
+        for (int i = 1; i <= 10; i++) // generate questions
         {
-            questionService.createQuestion(i,i + 1,"Please add both the variables together",test3);//Need to create Test service\
+            var1 = (int) Math.ceil(10 - 10 * Math.random());
+            var2 = (int) Math.ceil(10 - 10 * Math.random());
+
+            Question testQuestion = questionService.createQuestion(var1, var2, "addition", test3);
+            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 + var2, testQuestion);
         }
-        for(int i = 0; i <= 30; i++) // generate questions
+        for (int i = 1; i <= 10; i++) // generate questions
         {
-            questionService.createQuestion(i,i + 1,"Please add both the variables together",test4);//Need to create Test service\
+            while (var1 <= var2) {
+
+                var1 = (int) Math.ceil(10 - 10 * Math.random());
+
+                var2 = (int) Math.ceil(10 - 10 * Math.random());
+            }
+
+            Question testQuestion = questionService.createQuestion(var1, var2, "subtraction", test4);
+            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 - var2, testQuestion);
         }
-        Question testQuestion = new Question(1, 2, "test", test4);
+
+//        Question testQuestion2 = questionService.createQuestion(1,2,"add",test4);
+//        CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(3, testQuestion2);
+
 //        List<Question> testQuestions = questionService.testQuestions(test.getId());
 //        for (Question qu : testQuestions)
 //        {
@@ -105,11 +135,12 @@ public class SecurityexampleApplication implements CommandLineRunner{
 //        {
 //            System.out.println(te.toString());
 //        }
-        CorrectAnswer correctAnswer = new CorrectAnswer(1, testQuestion);
-        correctAnswerRepository.save(correctAnswer);
 
-        System.out.println(
-                correctAnswerRepository.findByQuestionId(testQuestion.getId()).toString());
+
+        //correctAnswerRepository.save(correctAnswer);
+
+        //System.out.println(correctAnswerRepository.findByQuestionId(testQuestion.getId()).toString());
+
 
 
     }

@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by zach on 3/11/2017.
@@ -50,8 +50,8 @@ public class TestService {
      * @return
      */
     @Transactional
-    public Set<Test> findAll() {
-        Set<Test> findAllTests = new HashSet<>();
+    public List<Test> findAll() {
+        List<Test> findAllTests = new ArrayList<>();
         for (Test test : testRepository.findAll()
                 ) {
             findAllTests.add(test);

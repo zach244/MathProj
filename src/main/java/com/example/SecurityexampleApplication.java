@@ -1,4 +1,5 @@
 package com.example;
+
 import com.example.Repository.CorrectAnswerRepository;
 import com.example.domain.*;
 import com.example.service.*;
@@ -13,7 +14,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @SpringBootApplication
-public class SecurityexampleApplication implements CommandLineRunner{
+public class SecurityexampleApplication implements CommandLineRunner {
 
     @Autowired
     private UserService userService;
@@ -68,31 +69,31 @@ public class SecurityexampleApplication implements CommandLineRunner{
         Test test4 = testService.createTest("test 4", category2);
         int var1 = 0;
         int var2 = 0;
-
         for (int i = 1; i <= 10; i++) // generate questions
         {
             var1 = (int) Math.ceil(10 - 10 * Math.random());
             var2 = (int) Math.ceil(10 - 10 * Math.random());
 
-            Question testQuestion = questionService.createQuestion(var1, var2, "addition", test1);
-            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 + var2, testQuestion);
+
+            correctAnswerService.createCorrectAnswer(var1 + var2, questionService.createQuestion(var1, var2,
+                    "addition", test1));
         }
         for (int i = 1; i <= 10; i++) // generate questions
         {
             while (var1 <= var2) {
-                var1 = (int) Math.ceil(10 - 10 * Math.random());
                 var2 = (int) Math.ceil(10 - 10 * Math.random());
             }
-            Question testQuestion = questionService.createQuestion(var1, var2, "subtraction", test2);
-            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 - var2, testQuestion);
+            Question testQuestion2 = questionService.createQuestion(var1, var2, "subtraction", test2);
+            var1 = (int) Math.ceil(10 - 10 * Math.random());
+            correctAnswerService.createCorrectAnswer(var1 - var2, testQuestion2);
         }
         for (int i = 1; i <= 10; i++) // generate questions
         {
             var1 = (int) Math.ceil(10 - 10 * Math.random());
             var2 = (int) Math.ceil(10 - 10 * Math.random());
 
-            Question testQuestion = questionService.createQuestion(var1, var2, "addition", test3);
-            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 + var2, testQuestion);
+            Question testQuestion3 = questionService.createQuestion(var1, var2, "addition", test3);
+            correctAnswerService.createCorrectAnswer(var1 + var2, testQuestion3);
         }
         for (int i = 1; i <= 10; i++) // generate questions
         {
@@ -103,8 +104,8 @@ public class SecurityexampleApplication implements CommandLineRunner{
                 var2 = (int) Math.ceil(10 - 10 * Math.random());
             }
 
-            Question testQuestion = questionService.createQuestion(var1, var2, "subtraction", test4);
-            CorrectAnswer correctAnswer = correctAnswerService.createCorrectAnswer(var1 - var2, testQuestion);
+            Question testQuestion4 = questionService.createQuestion(var1, var2, "subtraction", test4);
+            correctAnswerService.createCorrectAnswer(var1 - var2, testQuestion4);
         }
 
 //        Question testQuestion2 = questionService.createQuestion(1,2,"add",test4);
@@ -140,7 +141,6 @@ public class SecurityexampleApplication implements CommandLineRunner{
         //correctAnswerRepository.save(correctAnswer);
 
         //System.out.println(correctAnswerRepository.findByQuestionId(testQuestion.getId()).toString());
-
 
 
     }

@@ -37,7 +37,7 @@ public class CorrectAnswerService {
             LOG.info("There is already a correct answer specified to this question, please delete or" +
                     "alter this correct answer");
         } else {
-            correctAnswer = new CorrectAnswer(answer, question);
+            correctAnswer = new CorrectAnswer(answer, questionRepository.findById(question.getId()));
             correctAnswerRepository.save(correctAnswer);
         }
         return correctAnswer;

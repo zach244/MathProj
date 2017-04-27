@@ -3,6 +3,7 @@ package com.example.service;
 import com.example.Repository.TestAttemptRepository;
 import com.example.Repository.TestRepository;
 import com.example.Repository.UserRepository;
+import com.example.domain.Question;
 import com.example.domain.Test;
 import com.example.domain.TestAttempt;
 import com.example.domain.User;
@@ -12,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
@@ -34,6 +34,8 @@ public class TestAttemptService {
     private TestRepository testRepository;
     @Autowired
     private UserService userService;
+    @Autowired
+    private QuestionService questionService;
 
     /**
      * Creates a new test attempt by receiving a test as a parameter creating a timestamp
@@ -50,12 +52,9 @@ public class TestAttemptService {
         if (test == null) {
             LOG.info("argument passed can't be null");
         }
-        Timestamp timestamp = new Timestamp(System.currentTimeMillis());
-        TestAttempt testAttempt = new TestAttempt(
-                userService.getAuthenticatedUser(),
-                testRepository.findById(test.getId()), timestamp);
+        List<Question> questions = questionService.testQuestions(test.getId());
+        TestAttempt testAttempt = new TestAttempt(userService.getAuthenticatedUser(), questions.size(), test);
         testAttemptRepository.save(testAttempt);
-        LOG.info(testAttempt.toString());
         return testAttempt;
     }
 

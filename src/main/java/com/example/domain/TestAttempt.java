@@ -3,7 +3,6 @@ package com.example.domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
-import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -40,14 +39,11 @@ public class TestAttempt { //issues with circular dependencies
 
     }
 
-    public TestAttempt(User user, Test test, Date timestampField) {
-        this.user = user;
-        this.test = test;
-        this.timestampField = timestampField;
-    }
 
-    public TestAttempt(User user, Test test) {
+    public TestAttempt(User user, int numOfQuestions, Test test) {
         this.user = user;
+        this.numOfQuestions = numOfQuestions;
+        this.numOfCorrectQuestions = 0;
         this.test = test;
     }
 
@@ -81,6 +77,22 @@ public class TestAttempt { //issues with circular dependencies
 
     public void setAnswerAttempts(Set<AnswerAttempt> answerAttempts) {
         this.answerAttempts = answerAttempts;
+    }
+
+    public int getNumOfQuestions() {
+        return numOfQuestions;
+    }
+
+    public void setNumOfQuestions(int numOfQuestions) {
+        this.numOfQuestions = numOfQuestions;
+    }
+
+    public int getNumOfCorrectQuestions() {
+        return numOfCorrectQuestions;
+    }
+
+    public void setNumOfCorrectQuestions(int numOfCorrectQuestions) {
+        this.numOfCorrectQuestions = numOfCorrectQuestions;
     }
 
     @Override

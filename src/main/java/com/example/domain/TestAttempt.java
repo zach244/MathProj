@@ -20,7 +20,8 @@ public class TestAttempt { //issues with circular dependencies
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
-
+    private int numOfQuestions;
+    private int numOfCorrectQuestions;
     @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "test_id")

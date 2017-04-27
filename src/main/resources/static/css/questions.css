@@ -29,6 +29,7 @@ button
     margin: 5px;
     border: 1px solid black;
 }
-button:hover{
+
+button:hover {
     background-color: #2e6da4;
 }

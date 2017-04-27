@@ -40,14 +40,14 @@ public class SecurityexampleApplication implements CommandLineRunner{
     @Override
     public void run(String... args) throws Exception {
 
-            User user = new User();
-        	user.setUsername("zach");
-            user.setPassword("password");
-            Set<UserRole> userRoles = new HashSet<>();
-            Role role = new Role();
-            role.setName("ADMIN");
-            userRoles.add(new UserRole(user,role));
-            userService.createUser(user,userRoles);
+        User user = new User();
+        user.setUsername("zach");
+        user.setPassword("password");
+        Set<UserRole> userRoles = new HashSet<>();
+        Role role = new Role();
+        role.setName("ADMIN");
+        userRoles.add(new UserRole(user, role));
+        userService.createUser(user, userRoles);
 
         Category category = categoryService.createCategory("Addition");//creates new category of addition
         Category category2 = categoryService.createCategory("Subtraction");
@@ -112,6 +112,6 @@ public class SecurityexampleApplication implements CommandLineRunner{
                 correctAnswerRepository.findByQuestionId(testQuestion.getId()).toString());
 
 
-   }
+    }
 
 }

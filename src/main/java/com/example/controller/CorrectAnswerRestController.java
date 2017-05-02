@@ -15,6 +15,7 @@ public class CorrectAnswerRestController {
     @Autowired
     private CorrectAnswerRepository correctAnswerRepository;
 
+    //#TODO change to path variable
     @RequestMapping(method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
     public CorrectAnswer getCorrectAnswer(@RequestParam int questionId) {

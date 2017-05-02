@@ -34,10 +34,6 @@ public class ProfileService {
                     testAttemptService.returnTestAttempts(
                             userService.getAuthenticatedUser(), t));
         }
-        for (TestAttempt attempt : testAttempts
-                ) {
-            LOG.info(attempt.toString());
-        }
         return testAttempts;
     }
 

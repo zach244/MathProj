@@ -116,7 +116,7 @@
 }
 
 .submit[disabled] {
-    background: #3498db;
+    background: gray;
     background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
     background-image: -moz-linear-gradient(top, #3498db, #2980b9);
     background-image: -ms-linear-gradient(top, #3498db, #2980b9);

@@ -115,9 +115,6 @@ public class User implements UserDetails { //defines the user entity, and how to
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                '}';
+        return username;
     }
 }

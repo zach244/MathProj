@@ -16,9 +16,9 @@ public class CorrectAnswerRestController {
     private CorrectAnswerRepository correctAnswerRepository;
 
     //#TODO change to path variable
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(value = "/{questionId}", method = RequestMethod.GET)
     @ResponseStatus(value = HttpStatus.OK)
-    public CorrectAnswer getCorrectAnswer(@RequestParam int questionId) {
+    public CorrectAnswer getCorrectAnswer(@PathVariable("questionId") int questionId) {
         return correctAnswerRepository.findByQuestionId(questionId);
     }
 

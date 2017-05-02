@@ -58,6 +58,19 @@ public class TestAttemptService {
         return testAttempt;
     }
 
+    @Transactional
+    public void increment(int testAttemptID) {
+        if (testAttemptID <= 0) {
+            LOG.info("argument passed can't be null");
+        }
+
+        TestAttempt testAttempt = testAttemptRepository.findById(testAttemptID);
+        testAttempt.setNumOfCorrectQuestions(testAttempt.getNumOfCorrectQuestions() + 1);
+        testAttemptRepository.save(testAttempt);
+
+    }
+
+
     /**
      * returns a list of all test attempts of a certain test, and a certain user
      *

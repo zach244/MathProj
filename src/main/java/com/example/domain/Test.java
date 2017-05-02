@@ -74,10 +74,7 @@ public class Test {
 
     @Override
     public String toString() {
-        return "Test{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", category=" + category.toString() +
-                '}';
+        return name;
+
     }
 }

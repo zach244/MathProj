@@ -34,6 +34,20 @@
             color: white;
         }
 
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
 
     </style>
 </head>
@@ -83,21 +97,21 @@
     </style>
     <div class="text-center">
         <button onclick="displayScore()" type="button" id="Scores" class="btn btn-warning btn-large;">Scores</button>
-        <button type="button" id="Information" class="btn btn-danger btn-large" onclick="displayInfo();">Information
-        </button>
+        <!--<button type="button" id="Information" class="btn btn-danger btn-large" onclick="displayInfo();">Information-->
+        <!--</button>-->
         <br/><br/>
 
     </div>
     <script th:inline="javascript">
 
-        var name = /*[[${user}]]*/;
-        'USER';
-        function displayInfo() {
-            var name = document.getElementById('myDIV');
-            var score = document.getElementById('prettyCoolTable');
-            name.style.display = 'block';
-            score.style.display = 'none';
-        }
+        //        var name = /*[[${user}]]*/;
+        //        'USER';
+        //        function displayInfo() {
+        //            var name = document.getElementById('myDIV');
+        //            var score = document.getElementById('prettyCoolTable');
+        //            name.style.display = 'block';
+        //            score.style.display = 'none';
+        //        }
 
         function displayScore() {
             var score = document.getElementById('prettyCoolTable');
@@ -113,28 +127,28 @@
 </div>
 
 
-<div id="myDIV" style="display: none;">
-    <center>
-        <h1 th:inline="text">
-            Name : [[${user}]]
-        </h1>
-    </center>
-</div>
+<!--<div id="myDIV" style="display: none;">-->
+<!--<center>-->
+<!--&lt;!&ndash;<p th:text="${user}">Welcome to our grocery store!</p>&ndash;&gt;-->
+<!--</center>-->
+<!--</div>-->
 
 <div id="prettyCoolTable" style="display: none;">
     <table class="table table-hover">
         <thead>
         <tr>
-            <th style="width: 150px;">Id</th>
-            <th style="width: 200px;">Name</th>
-            <th>Category</th>
+            <th style="width: 150px;">Test</th>
+            <th style="width: 150px;">Test Category</th>
+            <th style="width: 200px;">Number of Correct Questions</th>
+            <th style="width: 200px;">Number of Total Questions</th>
         </tr>
         </thead>
         <tbody>
         <tr th:each="testAttempt : ${testAttempts}">
-            <td th:text="${testAttempt.id}">1</td>
-            <td th:text="${testAttempt.numOfQuestions}">Title ...</td>
-            <td th:text="${testAttempt.numOfCorrectQuestions}"></td>
+            <td th:text="${testAttempt.test.toString()}">1</td>
+            <td th:text="${testAttempt.test.category}">1</td>
+            <td th:text="${testAttempt.numOfCorrectQuestions}">Title ...</td>
+            <td th:text="${testAttempt.numOfQuestions}"></td>
         </tr>
         </tbody>
     </table>

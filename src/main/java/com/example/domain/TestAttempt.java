@@ -10,7 +10,7 @@ import java.util.Set;
  * Created by zach on 3/4/2017.
  */
 @Entity
-public class TestAttempt { //issues with circular dependencies
+public class TestAttempt {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

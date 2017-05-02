@@ -27,7 +27,7 @@
     padding-top: 10px;
     padding-left: 50px;
     position: relative;
-    height: 80px;
+    height: 90px;
     width: 85%;
     background-color: white;
     overflow: auto;
@@ -36,7 +36,7 @@
 .sec2 {
     padding-left: 50px;
     position: relative;
-    height: 80px;
+    height: 90px;
     width: 85%;
     background-color: white;
     overflow: auto;
@@ -69,7 +69,7 @@
 
 .numbut {
     background: #e86161;
-    width: 45%;
+    width: 20%;
     background-image: -webkit-linear-gradient(top, #e86161, #ff0000);
     background-image: -moz-linear-gradient(top, #e86161, #ff0000);
     background-image: -ms-linear-gradient(top, #e86161, #ff0000);
@@ -98,6 +98,7 @@
 }
 
 .submit {
+    width: 20%;
     background: #3498db;
     background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
     background-image: -moz-linear-gradient(top, #3498db, #2980b9);
@@ -116,7 +117,8 @@
 }
 
 .submit[disabled] {
-    background: gray;
+    width: 20%;
+    background: cccccc;
     background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
     background-image: -moz-linear-gradient(top, #3498db, #2980b9);
     background-image: -ms-linear-gradient(top, #3498db, #2980b9);
@@ -126,7 +128,7 @@
     -moz-border-radius: 28;
     border-radius: 28px;
     font-family: Courier New;
-    color: #cccccc;;
+    color: #ffffff;
     font-size: 25px;
     padding: 10px 20px 10px 20px;
     border: solid #58a0cc 2px;

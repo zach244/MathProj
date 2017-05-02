@@ -5,6 +5,22 @@
     <!--<meta name="_csrf" th:content="${_csrf.token}"/>-->
     <!--&lt;!&ndash; default header name is X-CSRF-TOKEN &ndash;&gt;-->
     <!--<meta name="_csrf_header" th:content="${_csrf.headerName}"/>-->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
 </head>
 
 <h2>Tests</h2>
@@ -34,12 +50,12 @@
     </div>
 </nav>
 
-<table class="table table-striped">
+<table class="table table-hover">
     <thead>
     <tr>
         <th style="width: 150px;">Id</th>
         <th style="width: 200px;">Name</th>
-        <th>Category</th>
+        <th style="width: 200px;">Category</th>
     </tr>
     </thead>
     <tbody>

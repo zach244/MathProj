@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("api/testattempt/")
 public class TestAttemptRestController {
-@Autowired
-private TestAttemptService testAttemptService;
-@Autowired
-private TestRepository testRepository;
-@Autowired
-private static final Logger LOG = LoggerFactory.getLogger(UserService.class); //need to look at
+    @Autowired
+    private TestAttemptService testAttemptService;
+    @Autowired
+    private TestRepository testRepository;
+    @Autowired
+    private static final Logger LOG = LoggerFactory.getLogger(UserService.class); //need to look at
 
    /**
     * Method that takes a Pathvariable of int which should be the TestID Then creates a TestAttempt based
@@ -36,4 +36,10 @@ private static final Logger LOG = LoggerFactory.getLogger(UserService.class); //
    public TestAttempt createTestAttempt(@PathVariable int testId) {
       return testAttemptService.createTestAttempt(testRepository.findById(testId));
    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "increment/{testId}")
+    @ResponseStatus(value = HttpStatus.ACCEPTED)
+    public void incrementTestAttempt(@PathVariable int testId) {
+        testAttemptService.increment(testId);
+    }
 }

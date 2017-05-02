@@ -2,7 +2,8 @@
 <html xmlns:th="http://thymeleaf.org" lang="en">
 
 <head>
-    <link rel="stylesheet" href="../css/questions.css" th:ref="@{/css/questions.css}" type="text/css" media="screen"/>
+    <link rel="stylesheet" href="../static/css/questions.css" th:ref="@{/static/css/questions.css}" type="text/css"
+          media="screen"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <!--<meta name="_csrf" th:content="${_csrf.token}"/>-->
     <!--&lt;!&ndash; default header name is X-CSRF-TOKEN &ndash;&gt;-->
@@ -17,13 +18,14 @@
 
 
             $.get("http://localhost:8080/questions/" + inputID, function (data, status) {
-                //JSON.stringify(data);
-                alert(data.questionText);
+                //alert(data.questionText);
                 if (data.questionText == "addition") {
 
                     document.getElementById("main").innerHTML = "What's the sum of the following two numbers?"
                     document.getElementById("target1").innerHTML = "";
                     document.getElementById("target2").innerHTML = "";
+                    document.getElementById("alert").innerHTML = "";
+                    document.getElementById("alert").className = "alert";
 
                     var v1 = data.var1;
                     var v2 = data.var2;
@@ -122,14 +124,30 @@
 
                         if (correctAns == answerSubmit) {
 
-//alert("Success!");
+//alert(data.test);
+                            $.ajax({
+                                type: "POST",
+                                url: "http://localhost:8080/api/testattempt/increment/" + testattemptID,
+                                dataType: 'json',
+                                success: function (data, textStatus, jqXHR) {
+                                    //correctAns = data.correctAnswer;
+                                    //alert("Success!");
+                                    //alert(data.correctAnswer); //can use to see testattemptID to see if it works
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    //alert("Error!");
+                                    //alert(textStatus);
+                                    //alert(errorThrown);
+                                }
+
+                            });
 
                             $(submit).prop('disabled', true);
 
                             document.getElementById("alert").innerHTML = "";
 
                             var para = document.createElement("strong");
-                            var t = document.createTextNode("Correct Answer!");
+                            var t = document.createTextNode("  Correct Answer!");
                             para.appendChild(t);
                             document.getElementById("alert").className = "alert alert-success fade in";
 
@@ -148,7 +166,7 @@
                             document.getElementById("alert").innerHTML = "";
 
                             var para = document.createElement("strong");
-                            var t = document.createTextNode("Wrong Answer :(");
+                            var t = document.createTextNode("  Wrong Answer :(");
                             para.appendChild(t);
                             document.getElementById("alert").className = "alert alert-danger fade in";
 
@@ -162,9 +180,11 @@
                 }//end if
                 else {
 
-                    document.getElementById("main").innerHTML = "What's the sum of the following two numbers?"
+                    document.getElementById("main").innerHTML = "What's the difference of the following two numbers?"
                     document.getElementById("target1").innerHTML = "";
                     document.getElementById("target2").innerHTML = "";
+                    document.getElementById("alert").innerHTML = "";
+                    document.getElementById("alert").className = "alert";
 
                     var v1 = data.var1;
                     var v2 = data.var2;
@@ -229,6 +249,8 @@
                         }
 
                     });
+
+
                     $(submit).click(function compare() {
                         answerSubmit = input.value;
 //alert(answerSubmit);
@@ -257,18 +279,35 @@
 
                             }
                         );
-
+//alert(correctAns);
+//alert(answerSubmit);
 
                         if (correctAns == answerSubmit) {
 
-//alert("Success!");
+//alert(data.getTest().getId());
+                            $.ajax({
+                                type: "POST",
+                                url: "http://localhost:8080/api/testattempt/increment/" + testattemptID,
+                                dataType: 'json',
+                                success: function (data, textStatus, jqXHR) {
+                                    //correctAns = data.correctAnswer;
+                                    //alert("Success!");
+                                    //alert(data.correctAnswer); //can use to see testattemptID to see if it works
+                                },
+                                error: function (jqXHR, textStatus, errorThrown) {
+                                    //alert("Error!");
+                                    //alert(textStatus);
+                                    //alert(errorThrown);
+                                }
+
+                            });
 
                             $(submit).prop('disabled', true);
 
                             document.getElementById("alert").innerHTML = "";
 
                             var para = document.createElement("strong");
-                            var t = document.createTextNode("Correct Answer!");
+                            var t = document.createTextNode("  Correct Answer!");
                             para.appendChild(t);
                             document.getElementById("alert").className = "alert alert-success fade in";
 
@@ -287,7 +326,7 @@
                             document.getElementById("alert").innerHTML = "";
 
                             var para = document.createElement("strong");
-                            var t = document.createTextNode("Wrong Answer :(");
+                            var t = document.createTextNode("  Wrong Answer :(");
                             para.appendChild(t);
                             document.getElementById("alert").className = "alert alert-danger fade in";
 

@@ -36,6 +36,8 @@ public class SecurityexampleApplication implements CommandLineRunner {
     @Autowired
     private CorrectAnswerService correctAnswerService;
 
+    @Autowired
+    private ProfileService profileService;
     public static void main(String[] args) {
         SpringApplication.run(SecurityexampleApplication.class, args);
 
